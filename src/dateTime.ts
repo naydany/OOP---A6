@@ -1,12 +1,14 @@
-export class DateTime{
-    day: number;
-    month: number;
-    year: number;
-    time: number;
-    constructor(day: number, month: number, year: number, time: number){
-        this.day = day;
-        this.month = month;
-        this.year = year;
-        this.time = time;
+export class DateTime {
+    public date = new Date();
+    constructor(date) {
+        this.date = date;
+    }
+
+    getAllDate() {
+        const hours = this.date.getHours() < 10 ? "0" + this.date.getHours() : this.date.getHours();
+
+        return this.date.getDay() + '/' + this.date.getDate() + '/' + (this.date.getMonth() + 1) + ' ' + hours+ ':' + this.date.getMinutes();
     }
 }
+
+
