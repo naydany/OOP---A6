@@ -2,21 +2,20 @@
 
 import { DateTime } from "./dateTime";
 import { Booking } from "./booking";
-import { BookingStatus } from "./enum";
+import { BookingStatus, Meal } from "./enum";
 
 //  consolelog Date
 let dates = new Date();
 let date = new DateTime(dates);
 let cons = date.getAllDate();
 
-let getStatusBooking =BookingStatus.CANCELLED;
+// Consolelog Booking Flights
 
-let dateTime = new Booking("200$", cons, getStatusBooking);
+//  StatusNooking
+let getStatusBooking = BookingStatus.CANCELLED;
+
+//  meals
+let MealLunch = [Meal.Dairy_free, Meal.Forth];
+let dateTime = new Booking("200$", cons, getStatusBooking, MealLunch);
 console.log(dateTime);
 
-// import { Booking } from "./booking";
-
-
-
-
-// console.log(booking);
