@@ -5,4 +5,12 @@ export class Address{
         this.city = city;
         this.contry = contry;
     }
+
+    //method 
+    getCity(): string{
+        return this.city;
+    }
+    getContry(): string{
+        return this.contry;
+    }
 }
