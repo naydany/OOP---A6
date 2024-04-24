@@ -11,12 +11,11 @@ export enum JobCategory{
 }
 
 //booking status
-// export enum BookingStatus{
-//     confirmed,
-//     edited,
-//     cancelled
-// }
-
+export enum BookingStatus {
+    PENDING='PENDING',
+    CONFIRMED = 'CONFIRMED',
+    CANCELLED= 'CANCELLED'
+}
 // gender
 export enum Gender{
     Male,
