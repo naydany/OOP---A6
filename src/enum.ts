@@ -10,6 +10,8 @@ export enum JobCategory {
     baggageHandler
 }
 
+
+
 //booking status
 export enum BookingStatus {
     PENDING = 'PENDING',
@@ -20,8 +22,8 @@ export enum BookingStatus {
 
 // gender
 export enum Gender {
-    Male,
-    Female
+    Male="Male",
+    Female ="Female"
 }
 
 
@@ -37,8 +39,8 @@ export enum Meal {
 
 //Seat type
 export enum SeatType {
-    Business_classic,
-    Business_flex,
-    Business_class
+    Business_classic = 'Business classic',
+    Business_flex = 'Business flex',
+    Business_class = 'Business class'
 
 }
