@@ -1,7 +1,5 @@
-
-
 import { Ticket } from "./ticket";
-// import { Flight } from "./flight";
+
 // this import for other
 import { DateTime } from "./dateTime";
 import { Booking } from "./booking";
@@ -15,22 +13,20 @@ import { ScheduleFlight } from "./scheduleFlight";
 let dates = new Date();
 let date = new DateTime(dates);
 let cons = date.getAllDate();
-// console.log(cons);
 
 // Console log Booking Flights
+
+
 //  StatusNooking
 let getStatusBooking = BookingStatus.CANCELLED;
+
 // Create Passenger objects
 const passenger2 = new Passenger("jk kl", '0123456', Gender.Female);
 
 // console.log(passengers1);
 
 let mealBooking = [Meal.Halal_Kosher, Meal.Vegetarian];
-// let dateTimeBooking1 = new Booking("200$", cons, getStatusBooking, mealBooking, passenger2,"gmail@gmail.com",'Canbodia', 6859403, scheduleFlight);
-// console.log(dateTimeBooking1);
-
 let getStatusBooking2 = BookingStatus.CONFIRMED;
-// console.log(dateTimeBooking2);
 
 // Console log Ticket
 let flightBooking = new Flight("IANW1000");
@@ -72,12 +68,16 @@ const scheduleFlight2 = new ScheduleFlight(
     [dateTime3],
     [dateTime4]
 )
-let dateTimeBooking2 = new Booking("500$", cons, getStatusBooking2, mealBooking, location, [scheduleFlight], passenger2, "van@gmail.com", 'Canada', 7890543);
-const TICKET = new Ticket(Seatype, flightBooking, [dateTimeBooking2], passenger2.getName());
+
+// let dateTimeBooking2 = new Booking("500$", getStatusBooking2, mealBooking, location, [scheduleFlight], passenger2, "van@gmail.com", 'Canada');
+// const TICKET = new Ticket(Seatype, flightBooking, [dateTimeBooking2], passenger2.getName());
 
 // passenger2.addTicket(TICKET);
 
-console.log(TICKET);
+// console.log(TICKET);
+
+
+
 // Access the flight schedule
 // console.log(scheduleFlight);
 console.log(scheduleFlight2);
