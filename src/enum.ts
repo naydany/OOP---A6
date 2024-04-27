@@ -39,8 +39,33 @@ export enum Meal {
 
 //Seat type
 export enum SeatType {
-    Business_classic = 'Business classic',
-    Business_flex = 'Business flex',
-    Business_class = 'Business class'
+    Economy_classic = 'Business_classic',
+    Economy_flex = 'Business_flex',
+    Business_class = 'Business_class'
 
+}
+
+export enum Economy_classic{
+    A1='A1',
+    A2='A2',
+    A3='A3',
+    A4='A4',
+    A5='A5',
+    A6='A6',
+}
+export enum Economy_flex{
+    B1='B1',
+    B2='B2',
+    B3='B3',
+    B4='B4',
+    B5='B5',
+    B6='B6',
+}
+export enum Business_class{
+    C1='C1',
+    C2='C2',
+    C3='C3',
+    C4='C4',
+    C5='C5',
+    C6='C6',
 }

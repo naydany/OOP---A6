@@ -30,7 +30,7 @@ let getStatusBooking2 = BookingStatus.CONFIRMED;
 
 // Console log Ticket
 let flightBooking = new Flight("IANW1000");
-let Seatype = SeatType.Business_classic;
+let Seatype = SeatType.Economy_classic;
 
 // address
 let location = [new Address("Pnom Penh", "Cambodia")];
@@ -81,4 +81,5 @@ const scheduleFlight2 = new ScheduleFlight(
 // Access the flight schedule
 // console.log(scheduleFlight);
 console.log(scheduleFlight2);
+
 

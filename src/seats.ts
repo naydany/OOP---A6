@@ -1,18 +1,31 @@
-import { SeatType } from "./enum";
 
-export class seats {
-    private seatNums: SeatType;
+import { Economy_classic, Economy_flex, Business_class, SeatType } from "./enum";
 
-    constructor(seatNums: SeatType) {
-        this.seatNums = seatNums;
+export class Seats{
+    private economy_classic: Economy_classic;
+    private economy_flex: Economy_flex;
+    private business_class: Business_class;
+    private seattype:SeatType;
+    constructor( economy_classic: Economy_classic, economy_flex: Economy_flex, business_class: Business_class, seattype:SeatType){
+        this.economy_classic=economy_classic;
+        this.economy_flex = economy_flex;
+        this.business_class = business_class;
+        this.seattype = seattype;
     }
-    getBusinessClassic() {
-        return SeatType.Business_classic;
+
+    getEconomy_classic():Economy_classic{
+        return this.economy_classic;
     }
-    getBusinessFlex() {
-        return SeatType.Business_flex;
+    getEconomy_flex():Economy_flex{
+        return this.economy_flex;
     }
-    getBusinessClass() {
-        return SeatType.Business_class;
+    getBusiness_class():Business_class{
+        return this.business_class;
     }
+    getSetType():SeatType{
+        return this.seattype
+    }
+
 }
+
+
