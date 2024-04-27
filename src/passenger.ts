@@ -1,20 +1,19 @@
 import { Person } from "./person";
 import { Gender } from "./enum";
-import { Ticket } from "./ticket";
-
+import { Booking } from "./booking";
 
 export class Passenger extends Person {
-    private ticket: Ticket[] = [];
-    constructor(name: string, phoneNumber: string, private gender: Gender, ticket: Ticket[] = []) {
+    private booking : Booking[] = [];
+    constructor(name: string, phoneNumber: string, private gender: Gender, booking: Booking[] = []) {
         super(name, phoneNumber);
         this.gender = gender;
-        this.ticket = ticket;
+        this.booking = booking;
     }
     getName():string{
         return this.name;
     }
-    addTicket(ticket: Ticket): void {
-        this.ticket.push(ticket);
+    addTicket(ticket: Booking): void {
+        this.booking.push(ticket);
     }
     
 }
