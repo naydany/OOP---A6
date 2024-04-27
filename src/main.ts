@@ -2,7 +2,7 @@
 
 import { DateTime } from "./dateTime";
 import { Booking } from "./booking";
-import { BookingStatus, Meal } from "./enum";
+import { BookingStatus, Meal, SeatType } from "./enum";
 
 //  consolelog Date
 let dates = new Date();
@@ -14,8 +14,12 @@ let cons = date.getAllDate();
 //  StatusNooking
 let getStatusBooking = BookingStatus.CANCELLED;
 
+//seatType
+let getSeatType = SeatType.Economy_classic;
+
 //  meals
 let MealLunch = [Meal.Dairy_free, Meal.Forth];
-let dateTime = new Booking("200$", cons, getStatusBooking, MealLunch);
+let dateTime = new Booking("200$", cons, getStatusBooking, MealLunch, getSeatType );
 console.log(dateTime);
+
 

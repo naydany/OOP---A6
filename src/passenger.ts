@@ -1,7 +1,7 @@
 import { Person } from "./person";
 import { Gender } from "./enum";
 
-class Passenger extends Person {
+export class Passenger extends Person {
     constructor(
         id:number,
         firstName:string, 
