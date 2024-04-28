@@ -2,6 +2,7 @@ import { Flight } from "./flight";
 import { Booking } from "./booking";
 import { SeatType } from "./enum";
 import { Passenger } from "./passenger";
+import { Seats } from "./seats";
 
 export class Ticket {
     private seatType: SeatType;
