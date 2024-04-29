@@ -9,5 +9,8 @@ export class Pilot extends Employee {
         super(salary,id, name, phoneNumber,gender);
         this.flight=flight;
     }
+    getFlights():Flight[]{
+        return this.flight
+    }
     
 }
