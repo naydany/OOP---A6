@@ -8,22 +8,18 @@ import { BookingStatus, Meal, SeatType, Gender } from "./enum";
 import { Address } from "./address";
 import { Flight } from "./flight";
 import { ScheduleFlight } from "./scheduleFlight";
+import { Seats } from "./seats";
 
 // Console log Date
 let dates = new Date();
 let date = new DateTime(dates);
 let cons = date.getAllDate();
 
-// Console log Booking Flights
-
-
 //  StatusNooking
 let getStatusBooking = BookingStatus.CANCELLED;
 
 // Create Passenger objects
 const passenger2 = new Passenger("jk kl", '0123456', Gender.Female);
-
-// console.log(passengers1);
 
 let mealBooking = [Meal.Halal_Kosher, Meal.Vegetarian];
 let getStatusBooking2 = BookingStatus.CONFIRMED;
@@ -77,9 +73,10 @@ const scheduleFlight2 = new ScheduleFlight(
 // console.log(TICKET);
 
 
-
 // Access the flight schedule
 // console.log(scheduleFlight);
 console.log(scheduleFlight2);
+
+let seat = new Seats(SeatType.Business_class,'A2')
 
 
