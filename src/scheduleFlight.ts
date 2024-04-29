@@ -16,15 +16,13 @@ export class ScheduleFlight {
     dateTime: DateTime[],
     from: Address[],
     to: Address[],
-    departure: DateTime[],
-    arriveTime: DateTime[]
+ 
   ) {
     this.flight = flight;
     this.dateTime = dateTime;
     this.from = from;
     this.to = to;
-    this.departure = departure;
-    this.arriveTime = arriveTime;
+
   }
 
   // Method to get the flight schedule
@@ -34,8 +32,7 @@ export class ScheduleFlight {
       dateTime: this.dateTime,
       from: this.from,
       to: this.to,
-      departure: this.departure,
-      arriveTime: this.arriveTime,
+
     };
   }
 }
