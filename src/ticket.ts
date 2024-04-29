@@ -5,12 +5,12 @@ import { Passenger } from "./passenger";
 import { Seats } from "./seats";
 
 export class Ticket {
-    private seatType: SeatType;
+    private seat: Seats;
     private bookings: Booking[] = [];
     private flight: Flight;
     private passenger: string;
-    constructor(seatType: SeatType, flight: Flight, bookings: Booking[], passenger: string) {
-        this.seatType = seatType;
+    constructor(seat: Seats, flight: Flight, bookings: Booking[], passenger: string) {
+        this.seat = seat;
         this.flight = flight;
         this.bookings = bookings;
         this.passenger = passenger;
