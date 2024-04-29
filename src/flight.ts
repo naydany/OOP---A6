@@ -3,14 +3,14 @@ import { DateTime } from "./dateTime";
 
 export class Flight{
     private flightNumber:string;
-    private departure:DateTime;
-    private arrival:DateTime;
     private origin:string;
     private destination:string;
-    constructor(flightNumber:string,departure:DateTime,arrival:DateTime,origin:string,destination:string){
+    private departureTime:Date;
+    private arrivalTime:Date;
+    constructor(flightNumber:string,origin:string,destination:string,departureTime:Date,arrivalTime:Date){
         this.flightNumber=flightNumber;
-        this.departure=departure;
-        this.arrival=arrival;
+        this.departureTime=departureTime;
+        this.arrivalTime=arrivalTime;
         this.origin=origin;
         this.destination=destination;
     }
@@ -18,5 +18,20 @@ export class Flight{
     //method
     getFlightNumber():string{
         return this.flightNumber;
+    }
+    getOrigin():string{
+        return this.origin;
+    }
+
+    getDestination():string{
+        return this.destination;
+    }
+
+    getDepartureTime():Date{
+        return this.departureTime;
+    }
+
+    getArriveTime():Date{
+        return this.arrivalTime;
     }
 }

@@ -25,7 +25,7 @@ let mealBooking = [Meal.Halal_Kosher, Meal.Vegetarian];
 let getStatusBooking2 = BookingStatus.CONFIRMED;
 
 // Console log Ticket
-let flightBooking = new Flight("IANW1000");
+// let flightBooking = new Flight("IANW1000");
 let Seatype = SeatType.Economy_classic;
 
 // address
@@ -34,14 +34,14 @@ let location = [new Address("Pnom Penh", "Cambodia")];
 
 // schedul of flight
 // ------ flight ABC123 ------------
-const flight = new Flight("ABC123",);
+const flight = new Flight("ABC123","Phnom Penn", "London", new Date(2024,4,30),new Date(2024,4,2))
 const dateTime1 = new DateTime("2024-04-25 10:00");
 const dateTime2 = new DateTime("2024-04-25 12:00");
 const fromAddress = new Address("Pnom Penh", "Cambodia");
 const toAddress = new Address("Paris", "French");
 
 //---------flight ABA321 --------------
-const flight2 = new Flight("ABA321");
+const flight2 = new Flight("ABA321","London", "Paris", new Date(2024,4,2),new Date(2024,4,3));
 const dateTime3 = new DateTime("2024-04-25 12:00");
 const dateTime4 = new DateTime("2024-04-26 5:00");
 const fromAddress1 = new Address("Pnom Penh", "Cambodia");
