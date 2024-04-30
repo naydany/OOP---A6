@@ -1,18 +1,30 @@
-import { Booking } from "./booking";
-import { BookingFlight } from "./bookingTrip";
 
+import { BookingFlight } from "./bookingFlight";
+import { DateTime } from "./dateTime";
 
 export class Trip {
-    private departureTrip: BookingFlight[] = [];
-    private retureFlights: Booking[] = [];
-    constructor(departureTrip: BookingFlight[], retureFlights: Booking[]) {
-        this.departureTrip = departureTrip;
-        this.retureFlights = retureFlights;
+    private detinationTrip:string;
+    private departureTime:Date;
+    private arriveTime:Date;
+    private bookingFlights: BookingFlight[] = [];
+  
+    constructor(detinationTrip:string,departureTime:Date,arriveTime:Date) {
+        this.detinationTrip=detinationTrip;
+        this.departureTime=departureTime;
+        this.arriveTime=arriveTime;
+       
     }
-    getDepartureTrip(): BookingFlight[] {
-        return this.departureTrip;
+    getbookingFlights(bookingflight:BookingFlight) {
+        this.bookingFlights.push(bookingflight);
     }
-    getRetureFlights(): Booking[] {
-        return this.retureFlights;
+    getDestinationTrip():string{
+        return this.detinationTrip;
+    }
+    getDepartureTime():Date{
+        return this.departureTime;
+    }
+    getArriveTime():Date{
+        return this.arriveTime;
     }
 }
+

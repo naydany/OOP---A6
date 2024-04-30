@@ -1,13 +1,13 @@
 // import from other 
-import { DateTime } from "./dateTime";
+
 
 export class Flight{
     private flightNumber:string;
-    private departureTime:DateTime;
-    private arrivalTime:DateTime;
+    private departureTime:Date;
+    private arrivalTime:Date;
     private origin:string;
     private destination:string;
-    constructor(flightNumber:string,departureTime:DateTime,arrivalTime:DateTime,origin:string,destination:string){
+    constructor(flightNumber:string,origin:string,destination:string,departureTime:Date,arrivalTime:Date){
         this.flightNumber=flightNumber;
         this.departureTime=departureTime;
         this.arrivalTime=arrivalTime;
@@ -27,11 +27,11 @@ export class Flight{
         return this.destination;
     }
 
-    getDepartureTime():DateTime{
+    getDepartureTime():Date{
         return this.departureTime;
     }
 
-    getArriveTime():DateTime{
+    getArriveTime():Date{
         return this.arrivalTime;
     }
 }
