@@ -4,7 +4,7 @@ import { Ticket } from "./ticket";
 import { DateTime } from "./dateTime";
 import { Booking } from "./booking";
 import { Passenger } from "./passenger";
-import { BookingStatus, Meal, SeatType, Gender } from "./enum";
+import { BookingStatus, Meal, SeatType, Gender, JobCategory } from "./enum";
 import { Address } from "./address";
 import { Flight } from "./flight";
 import { ScheduleFlight } from "./scheduleFlight";
@@ -96,7 +96,7 @@ const flight3 = new Flight("FL456", dateTime3, dateTime4, "Origin City 2", "Dest
 const pilotFlights = [flight1, flight2];
 
 // Create an instance of Pilot
-const pilot = new Pilot(5000, "P001", "John Rak", "123-456-7890", [Gender.Male], pilotFlights);
+const pilot = new Pilot(5000, "P001", "John Rak", "123-456-7890", [Gender.Male], pilotFlights,JobCategory.pilot);
 
 // Access the pilot's flights
 const flights = pilot.getFlights();

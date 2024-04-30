@@ -4,9 +4,10 @@ import { Person } from "./person";
 export class Employee extends Person {
     private salary: number;
     private position: JobCategory;
-    constructor(salary: number,id:string, name: string, phoneNumber: string,gender:Gender[]) {
+    constructor(salary: number,id:string, name: string, phoneNumber: string,gender:Gender[],position: JobCategory) {
         super(id,name, phoneNumber,gender);
         this.salary = salary;
+        this.position=position;
     }
 
     getName(): string {
