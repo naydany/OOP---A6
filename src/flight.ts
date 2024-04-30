@@ -1,37 +1,39 @@
-// import from other 
 import { DateTime } from "./dateTime";
+import { Passenger } from "./passenger";
+import { TicketType } from "./enum";
+import { Ticket } from "./ticket";
 
-export class Flight{
-    private flightNumber:string;
-    private origin:string;
-    private destination:string;
-    private departureTime:Date;
-    private arrivalTime:Date;
-    constructor(flightNumber:string,origin:string,destination:string,departureTime:Date,arrivalTime:Date){
-        this.flightNumber=flightNumber;
-        this.departureTime=departureTime;
-        this.arrivalTime=arrivalTime;
-        this.origin=origin;
-        this.destination=destination;
+export class Flight {
+    private ticket: Ticket[];
+    constructor(private flightNumber: string, private origin: string, private destination: string,
+        private departureTime: Date, private arrivalTime: Date, public passengers: Passenger[], ticket:Ticket[]
+    ) {
+        this.ticket = [];
     }
 
-    //method
-    getFlightNumber():string{
-        return this.flightNumber;
-    }
-    getOrigin():string{
-        return this.origin;
+    addTicket(ticket: Ticket): void {
+        this.ticket.push(ticket);
     }
 
-    getDestination():string{
-        return this.destination;
+    getTicket() {
+        return this.ticket;
     }
 
-    getDepartureTime():Date{
-        return this.departureTime;
+    getReturnTicketPassengerDetails(): Passenger[] {
+        const returnTicketPassengers: Passenger[] = [];
+        for (const passenger of this.passengers) {
+            for (const ticket of passenger.getTickets()) {
+                if (ticket.ticketType === TicketType.Return) {
+                    returnTicketPassengers.push(passenger);
+                }
+            }
+        }
+        return returnTicketPassengers;
     }
 
-    getArriveTime():Date{
-        return this.arrivalTime;
+    getReturnTicketPassengerCount(): number {
+        return this.getReturnTicketPassengerDetails().length;
     }
+
+
 }

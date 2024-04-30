@@ -16,7 +16,8 @@ export enum JobCategory {
 export enum BookingStatus {
     PENDING = 'PENDING',
     CONFIRMED = 'CONFIRMED',
-    CANCELLED = 'CANCELLED'
+    CANCELLED = 'CANCELLED',
+    Return = "Return"
 }
 
 
@@ -34,6 +35,13 @@ export enum Meal {
     Dairy_free = "Dairy_free",
     Halal_Kosher = "Halal_K",
     Forth = "Forth",
+}
+
+
+//  ticket type
+ export enum TicketType {
+    OneWay = 'one-way',
+    Return = 'return'
 }
 
 

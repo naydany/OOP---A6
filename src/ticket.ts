@@ -1,18 +1,24 @@
 import { Flight } from "./flight";
 import { Booking } from "./booking";
-import { SeatType } from "./enum";
+import { SeatType, TicketType, } from "./enum";
 import { Passenger } from "./passenger";
-import { Seats } from "./seats";
+
+
+
 
 export class Ticket {
-    private seat: Seats;
-    private bookings: Booking[] = [];
+ 
     private flight: Flight;
-    private passenger: string;
-    constructor(seat: Seats, flight: Flight, bookings: Booking[], passenger: string) {
-        this.seat = seat;
+    private passenger: Passenger;
+    private booking : Booking[];
+    private seats: SeatType;
+    public ticketType: TicketType;
+    constructor(seats: SeatType, flight: Flight, booking: Booking[], passenger: Passenger, ticketType : TicketType) {
+        this.seats = seats;
         this.flight = flight;
-        this.bookings = bookings;
+        this.booking = booking;
         this.passenger = passenger;
+        this.ticketType = ticketType;
     }
 }
+
