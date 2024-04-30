@@ -36,6 +36,9 @@ console.log(bookingflight)
 let trip = new Trip('Paris',new Date(2024,3,5,7,30,0),new Date(2024,3,21,11,40,5),);
 trip.getbookingFlights(bookingflight);
 console.log(trip)
+
+
+
 // Console log Ticket
 let flightBooking = new Flight("ABC123",new DateTime("2024-04-25 10:00"),new DateTime("2024-04-25 10:00"),"","");
 let Seatype = SeatType.Economy_classic;
@@ -72,20 +75,6 @@ const scheduleFlight2 = new ScheduleFlight(
     [fromAddress],
     [toAddress],
 )
-
-// let dateTimeBooking2 = new Booking("500$", getStatusBooking2, mealBooking, location, [scheduleFlight], passenger2, "van@gmail.com", 'Canada');
-// const TICKET = new Ticket(Seatype, flightBooking, [dateTimeBooking2], passenger2.getName());
-
-// passenger2.addTicket(TICKET);
-
-// console.log(TICKET);
-
-
-// Access the flight schedule
-// console.log(scheduleFlight);
-// console.log(scheduleFlight2);
-
-let seat = new Seats(SeatType.Business_class,'A2')
 
 
 // Create instances of Flight for the pilot's flights ----------------------------------------------------------------
