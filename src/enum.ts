@@ -1,13 +1,13 @@
 // job category
 export enum JobCategory {
-    admin,
-    crew,
-    pilot,
-    co_pilot,
-    airlineManager,
-    chef,
-    airportManager,
-    baggageHandler
+    admin ="admin",
+    crew ="crew",
+    pilot="pilot",
+    co_pilot="co_pilot",
+    airlineManage="airlineManager",
+    chef="chef",
+    airportManager="airportManager",
+    baggageHandler="baggageHandler",
 }
 
 

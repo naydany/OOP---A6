@@ -20,16 +20,16 @@ export class Employee extends Person {
         return JobCategory.pilot;
     }
 
-    getairline(): JobCategory {
-        return JobCategory.airlineManager;
-    }
+    // getairline(): JobCategory {
+    //     return JobCategory.airlineManager;
+    // }
 
     getChef(): JobCategory {
         return JobCategory.chef;
     }
 
     getairlineManager(): JobCategory {
-        return JobCategory.airlineManager;
+        return JobCategory.airportManager;
     }
 
     getairportManager(): JobCategory {
@@ -39,4 +39,14 @@ export class Employee extends Person {
     getbaggageHandler(): JobCategory {
         return JobCategory.baggageHandler;
     }
+
+    getSalary(): number {
+        return this.salary;
+    }
+
+    getPosition(): JobCategory {
+        return this.position;
+    }
+
+    
 }
