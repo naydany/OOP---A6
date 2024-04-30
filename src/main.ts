@@ -10,6 +10,8 @@ import { Flight } from "./flight";
 import { ScheduleFlight } from "./scheduleFlight";
 import { Seats } from "./seats";
 import {Pilot} from "./pilot";
+import { Gate } from "./gate";
+import {Airoplane} from "./airoplane";
  
 // Console log Date
 let dates = new Date();
@@ -94,3 +96,12 @@ const flights = pilot.getFlights();
 // gate for into the plane ---------------------------------------------------------------------------------------------
 const gate1 = new Gate("A1", "Paris");
 const gate2 = new Gate("B3", "London");
+
+const plane1 = new Airoplane("ABC123", gate1);
+const plane2 = new Airoplane("XYZ789", gate2);
+
+plane1.displayPlaneInfo();
+plane2.displayPlaneInfo();
+
+const destination = plane1.getDestination();
+console.log(`Your plane is waiting at Gate ${plane1.gate.gateNumber} for the destination: ${destination}`);

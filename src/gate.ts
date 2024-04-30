@@ -1,6 +1,6 @@
-class Gate {
-    private gateNumber: string;
-    private destination: string;
+export class Gate {
+    public gateNumber: string;
+    public destination: string;
     constructor(gateNumber: string, destination: string) {
         this.gateNumber = gateNumber;
         this.destination = destination;
