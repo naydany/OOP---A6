@@ -89,4 +89,8 @@ const pilot = new Pilot(5000, "P001", "John Rak", "123-456-7890", [Gender.Male],
 
 // Access the pilot's flights
 const flights = pilot.getFlights();
-console.log(flights);
+// console.log(flights);
+
+// gate for into the plane ---------------------------------------------------------------------------------------------
+const gate1 = new Gate("A1", "Paris");
+const gate2 = new Gate("B3", "London");
