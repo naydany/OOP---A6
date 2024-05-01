@@ -11,6 +11,8 @@ import { Pilot } from "./pilot";
 import { Gate } from "./gate";
 import { BookingFlight } from "./bookingFlight";
 import { Trip } from "./trip";
+import { TripDetail } from "./tripDetail";
+import { Baggage } from "./baggage";
 import { Employee } from "./employee";
 import { Ticket } from "./ticket";
 import { Airoplane } from "./airoplane";
@@ -32,9 +34,8 @@ bookingflight.getAllFlight(flightB);
 // console.log(bookingflight)
 
 // -------------- booking trip ---------------
-let trip = new Trip('Paris', new Date(2024, 3, 5, 7, 30, 0), new Date(2024, 3, 21, 11, 40, 5),);
-trip.getbookingFlights(bookingflight);
-// console.log(trip)
+let trip = new Trip('Paris',new Date(2024,3,5,7,30,0),new Date(2024,3,21,11,40,5),bookingflight);
+console.log(trip)
 
 
 
@@ -46,7 +47,7 @@ let getStatusBooking2 = BookingStatus.CONFIRMED;
 let Seatype = SeatType.Economy_classic;
 let Meal_passenger_sen = [Meal.Vegetarian, Meal.Vegan];
 
-// address
+// ------ address ------
 let location = [new Address("Pnom Penh", "Cambodia")];
 
 const passengers1: Passenger[] = [
@@ -73,7 +74,7 @@ const dateTime4 = new DateTime("2024-04-26 5:00");
 const fromAddress1 = new Address("Pnom Penh", "Cambodia");
 const toAddress2 = new Address("Paris", "French")
 
-// Create an instance of ScheduleFlight
+// -----Create an instance of ScheduleFlight ------
 const scheduleFlight = new ScheduleFlight(
   flight,
   [dateTime1],
@@ -100,7 +101,7 @@ const pilot = new Pilot(5000, "P001", "John Rak", "123-456-7890", Gender.Male, p
 
 // Access the pilot's flights
 const flights = pilot.getFlights();
-// console.log(flights);
+// console.log('Pilot-Schedule',flights);
 
 // gate for into the plane ---------------------------------------------------------------------------------------------
 const gate1 = new Gate("A1", "Paris");
@@ -127,16 +128,30 @@ const destination = plane1.getDestination();
 // console.log(`Your plane is waiting at Gate ${plane1.gate.gateNumber} for the destination: ${destination}`);
 
 
+// ------- Trip Detail --------
+const passenger1 =new Passenger('1','da','+855 12 989 8877',Gender.Female, null);
+const passenger2 =new Passenger('1','ny','+855 97 989 8877',Gender.Male, null);
+const baggage1 = new Baggage('S3','22kg')
+const baggage2 = new Baggage('H3','32kg')
+const tripdetail = new TripDetail()
+tripdetail.addPassenger(passenger1);
+tripdetail.addPassenger(passenger2);
+tripdetail.addFlight(flightA);
+tripdetail.addFlight(flightB);
+tripdetail.addBaggage(baggage1);
+tripdetail.addBaggage(baggage2);
+console.log(tripdetail)
+
 
 // Create Employee objects----------------------------------------------------------------
 const employees = [
-  new Employee(6000, "1", "John Doe", "1234567890", Gender.Male, JobCategory.crew),
-  new Employee(10000, "2", "Jane Smith", "9876543210", Gender.Female, JobCategory.pilot),
-  new Employee(8000, "3", "David Johnson", "5555555555", Gender.Male, JobCategory.co_pilot),
-  new Employee(12000, "4", "Emily Davis", "1112223334", Gender.Female, JobCategory.airportManager),
-  new Employee(5000, "5", "Michael Brown", "4445556667", Gender.Male, JobCategory.chef),
-  new Employee(9000, "6", "Sarah Wilson", "8889990001", Gender.Female, JobCategory.airportManager),
-  new Employee(4000, "7", "Robert Lee", "7778889990", Gender.Male, JobCategory.baggageHandler),
+    new Employee(6000, "1", "John Doe", "1234567890", Gender.Male, JobCategory.crew),
+    new Employee(10000, "2", "Jane Smith", "9876543210", Gender.Female, JobCategory.pilot),
+    new Employee(8000, "3", "David Johnson", "5555555555", Gender.Male, JobCategory.co_pilot),
+    new Employee(12000, "4", "Emily Davis", "1112223334", Gender.Female, JobCategory.airportManager),
+    new Employee(5000, "5", "Michael Brown", "4445556667", Gender.Male, JobCategory.chef),
+    new Employee(9000, "6", "Sarah Wilson", "8889990001", Gender.Female, JobCategory.airportManager),
+    new Employee(4000, "7", "Robert Lee", "7778889990", Gender.Male, JobCategory.baggageHandler),
 
 ];
 

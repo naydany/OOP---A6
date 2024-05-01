@@ -1,4 +1,4 @@
-// job category
+// --- job category ---
 export enum JobCategory {
     admin ="admin",
     crew ="crew",
@@ -10,9 +10,7 @@ export enum JobCategory {
     baggageHandler="baggageHandler",
 }
 
-
-
-//booking status
+//--- booking status ---
 export enum BookingStatus {
     PENDING = 'PENDING',
     CONFIRMED = 'CONFIRMED',
@@ -21,14 +19,14 @@ export enum BookingStatus {
 }
 
 
-// gender
+// --- gender ---
 export enum Gender {
     Male="Male",
     Female ="Female"
 }
 
 
-//meal type
+// --- meal type ---
 export enum Meal {
     Vegetarian = "Vegetarian",
     Vegan = "Vegan",
@@ -53,6 +51,8 @@ export enum SeatType {
 
 }
 
+
+// --- Seat Number ---
 export enum Economy_classic{
     A1='A1',
     A2='A2',
