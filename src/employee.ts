@@ -4,9 +4,10 @@ import { Person } from "./person";
 export class Employee extends Person {
     private salary: number;
     private position: JobCategory;
-    constructor(salary: number,id:string, name: string, phoneNumber: string,gender:Gender) {
+    constructor(salary: number,id:string, name: string, phoneNumber: string,gender:Gender,position: JobCategory) {
         super(id,name, phoneNumber,gender);
         this.salary = salary;
+        this.position=position;
     }
 
     getName(): string {
@@ -19,16 +20,16 @@ export class Employee extends Person {
         return JobCategory.pilot;
     }
 
-    getairline(): JobCategory {
-        return JobCategory.airlineManager;
-    }
+    // getairline(): JobCategory {
+    //     return JobCategory.airlineManager;
+    // }
 
     getChef(): JobCategory {
         return JobCategory.chef;
     }
 
     getairlineManager(): JobCategory {
-        return JobCategory.airlineManager;
+        return JobCategory.airportManager;
     }
 
     getairportManager(): JobCategory {
@@ -38,4 +39,14 @@ export class Employee extends Person {
     getbaggageHandler(): JobCategory {
         return JobCategory.baggageHandler;
     }
+
+    getSalary(): number {
+        return this.salary;
+    }
+
+    getPosition(): JobCategory {
+        return this.position;
+    }
+
+    
 }
