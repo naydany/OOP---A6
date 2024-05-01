@@ -36,16 +36,15 @@ bookingflight.addAllFlight(flightB);
 
 
 // -------------- booking trip ---------------
-let trip = new Trip('Paris',new Date(2024,3,5,7,30,0),new Date(2024,3,21,11,40,5));
-trip.getbookingFlights(bookingflight);
-// console.log(trip)
+let trip = new Trip('Paris',new Date(2024,3,5,7,30,0),new Date(2024,3,21,11,40,5),bookingflight);
+console.log(trip)
 
 
-// Console log Ticket
+// ------- Console log Ticket -----------
 let flightBooking = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "", "");
 let Seatype = SeatType.Economy_classic;
 
-// address
+// ------ address ------
 let location = [new Address("Pnom Penh", "Cambodia")];
 
 
@@ -64,7 +63,7 @@ const dateTime4 = new DateTime("2024-04-26 5:00");
 const fromAddress1 = new Address("Pnom Penh", "Cambodia");
 const toAddress2 = new Address("Paris", "French")
 
-// Create an instance of ScheduleFlight
+// -----Create an instance of ScheduleFlight ------
 const scheduleFlight = new ScheduleFlight(
     flight,
     [dateTime1],
