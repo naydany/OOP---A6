@@ -1,5 +1,8 @@
-// import from other 
 import { DateTime } from "./dateTime";
+import { Passenger } from "./passenger";
+import { TicketType } from "./enum";
+import { Ticket } from "./ticket";
+
 
 export class Flight{
     private flightNumber:string;
@@ -7,24 +10,14 @@ export class Flight{
     private arrivalTime:DateTime;
     private origin:string;
     private destination:string;
-    constructor(flightNumber:string,departureTime:DateTime,arrivalTime:DateTime,origin:string,destination:string){
+    // private ticket: Ticket[];
+    constructor(flightNumber:string,departureTime:DateTime,arrivalTime:DateTime,origin:string,destination:string ){
         this.flightNumber=flightNumber;
         this.departureTime=departureTime;
         this.arrivalTime=arrivalTime;
         this.origin=origin;
         this.destination=destination;
-    }
-
-    //method
-    getFlightNumber():string{
-        return this.flightNumber;
-    }
-    getOrigin():string{
-        return this.origin;
-    }
-
-    getDestination():string{
-        return this.destination;
+        // this.ticket = ticket;
     }
 
     getDepartureTime():DateTime{
@@ -34,4 +27,7 @@ export class Flight{
     getArriveTime():DateTime{
         return this.arrivalTime;
     }
+   
+
+
 }

@@ -1,9 +1,8 @@
 import { BookingStatus, Meal } from "./enum";
-import { Passenger } from "./passenger";
-import { Address } from "./address";
 import { Baggage } from "./baggage";
 import { Trip } from "./trip";
-
+import { BookingFlight } from "./bookingFlight";
+import { Passenger } from "./passenger";
 
 export class Booking {
     private prices: string;
@@ -15,7 +14,19 @@ export class Booking {
     private passengers: Passenger;
     private trip: Trip[] | null;
     private baggage: Baggage[] | null;
-    constructor(price: string, passportNumber: number, natinality: string, email: string, bookingStatus: BookingStatus, meal: Meal[] | null, passengers: Passenger, trip: Trip | null, baggage: Baggage[] | null) {
+
+    constructor(
+        price: string,
+        passportNumber: number,
+        natinality: string,
+        email: string,
+        bookingStatus: BookingStatus,
+        meal: Meal[] | null,
+        passengers: Passenger,
+        trip: Trip | null,
+        baggage: Baggage[] | null,
+        bookingReference: BookingFlight[] | null
+    ) {
         this.prices = price;
         this.passportNumber = passportNumber;
         this.natinality = natinality;
@@ -25,18 +36,15 @@ export class Booking {
         this.passengers = passengers;
         this.baggage = baggage;
     }
-    getBookingStatus(): BookingStatus {
-        return this.bookingStatus;
-    }
-    getMeal(): Meal[] {
-        return this.meal;
-    }
-    getPassengers(): Passenger {
-        return this.passengers;
-    }
+
+
+    // getBookingStatus(): BookingStatus {
+    //     return this.bookingStatus;
+    // }
+
+    // getMeal(): Meal[] {
+    //     return this.meal;
+    // }
+
+    
 }
-
-
-
-
-
