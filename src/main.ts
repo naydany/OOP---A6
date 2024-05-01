@@ -15,6 +15,8 @@ import {Airoplane} from "./airoplane";
  
 import { BookingFlight } from "./bookingFlight";
 import { Trip } from "./trip";
+import { TripDetail } from "./tripDetail";
+import { Baggage } from "./baggage";
 
 // Console log Date
 let dates = new Date();
@@ -28,15 +30,14 @@ const flightB = new Flight("ABA321", new DateTime("2024-04-25 10:00"),new DateTi
 
 // -------- booking flight ---------
 let bookingflight = new BookingFlight();
-bookingflight.getAllFlight(flightA);
-bookingflight.getAllFlight(flightB);
-console.log(bookingflight)
+bookingflight.addAllFlight(flightA);
+bookingflight.addAllFlight(flightB);
+
 
 // -------------- booking trip ---------------
-let trip = new Trip('Paris',new Date(2024,3,5,7,30,0),new Date(2024,3,21,11,40,5),);
+let trip = new Trip('Paris',new Date(2024,3,5,7,30,0),new Date(2024,3,21,11,40,5));
 trip.getbookingFlights(bookingflight);
 console.log(trip)
-
 
 
 // Console log Ticket
@@ -85,11 +86,11 @@ const flight3 = new Flight("FL456", dateTime3, dateTime4, "Origin City 2", "Dest
 const pilotFlights = [flight1, flight2];
 
 // Create an instance of Pilot
-const pilot = new Pilot(5000, "P001", "John Rak", "123-456-7890", [Gender.Male], pilotFlights);
+const pilot = new Pilot(5000, "P001", "John Rak", "123-456-7890", Gender.Male, pilotFlights);
 
 // Access the pilot's flights
 const flights = pilot.getFlights();
-// console.log(flights);
+// console.log('Pilot-Schedule',flights);
 
 // gate for into the plane ---------------------------------------------------------------------------------------------
 const gate1 = new Gate("A1", "Paris");
@@ -103,3 +104,18 @@ const plane2 = new Airoplane("XYZ789", gate2);
 
 const destination = plane1.getDestination();
 // console.log(`Your plane is waiting at Gate ${plane1.gate.gateNumber} for the destination: ${destination}`);
+
+
+// ------- Trip Detail --------
+const passenger1 =new Passenger('1','da','+855 12 989 8877',Gender.Female);
+const passenger2 =new Passenger('1','ny','+855 97 989 8877',Gender.Male);
+const baggage1 = new Baggage('S3','22kg')
+const baggage2 = new Baggage('H3','32kg')
+const tripdetail = new TripDetail()
+tripdetail.addPassenger(passenger1);
+tripdetail.addPassenger(passenger2);
+tripdetail.addFlight(flightA);
+tripdetail.addFlight(flightB);
+tripdetail.addBaggage(baggage1);
+tripdetail.addBaggage(baggage2);
+console.log(tripdetail)

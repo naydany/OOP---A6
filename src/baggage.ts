@@ -1,9 +1,16 @@
 export class Baggage{
-    private baggage:string;
-    private weight:number;
-    constructor(baggage:string, weight:number){
-        this.baggage = baggage;
+    private numberbaggage:string;
+    private weight:string;
+    constructor(numberbaggage:string, weight:string){
+        this.numberbaggage = numberbaggage;
         this.weight = weight;
+    }
+
+    getNumberBaggage():string{
+        return this.numberbaggage;
+    }
+    getWeight():string{
+        return this.weight;
     }
     
 }
