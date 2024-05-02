@@ -4,12 +4,12 @@ import { Ticket } from "./ticket";
 
 export class Passenger extends Person {
     private gender: Gender;
-    private ticket: Ticket[];
+    private tickets: Ticket[];
 
-    constructor(id, name: string, phoneNumber: string, gender: Gender, ticket: Ticket) {
+    constructor(id: any, name: string, phoneNumber: string, gender: Gender) {
         super(id, name, phoneNumber);
         this.gender = gender;
-        this.ticket = [ticket];
+        this.tickets = [];
     }
 
     getName(): string {
@@ -17,13 +17,7 @@ export class Passenger extends Person {
     }
 
     getReturnTicketPassengerDetails(): Ticket[] {
-        const returnTicketPassengers: Ticket[] = [];
-        for (const ticket of this.ticket) {
-            if (ticket.ticketType === TicketType.Return) {
-                returnTicketPassengers.push(ticket);
-            }
-        }
-        return returnTicketPassengers;
+        return this.tickets.filter(ticket => ticket.ticketType === TicketType.Return);
     }
 
     getReturnTicketPassengerCount(): number {
@@ -31,10 +25,10 @@ export class Passenger extends Person {
     }
 
     addTicket(ticket: Ticket) {
-        this.ticket.push(ticket);
+        this.tickets.push(ticket);
     }
 
     getTickets(): Ticket[] {
-        return this.ticket;
+        return this.tickets;
     }
 }
