@@ -120,7 +120,7 @@ const bookingFlightReferences = new BookingFlight([flight], TicketType.Return, n
 let BookingTicketPassenger1 = new Booking('200$', 876543, "Cambodia", "doda@gmail.com", getStatusBooking2, Meal_passenger_sen, passengers1[0], null, null, []);
 let BookingTicketPassenger_2 = new Booking('500$', 345678, "Finlane", "vanny@gmail.com", getStatusBooking, Meal_passenger_sen1, passengers1[1], null, null, [bookingFlightReferences]);
 
-// meal ------
+// ------------------------------------USER STURY 7 (meal type of flight)------------------------------------------------
 let meal1 = BookingTicketPassenger1.getMeal();
 let meal2 = BookingTicketPassenger_2.getMeal();
 
@@ -129,10 +129,10 @@ manyMeal.push(meal1,meal2);
 
 const flightl = new Flight("FL123", dateTime1, dateTime2, "Origin City 1", "Destination City 1",manyMeal);
 
-let meal= flightl.getMeal();
-console.log(meal);
+let mealType= flightl.getMeal();
+console.log(mealType);
 
-//----------------------------------------------------------------
+//-------------------------------USER STORY 6 (gate for waiting)---------------------------------
 const plane1 = new Airoplane("ABC123", gate1);
 const plane2 = new Airoplane("XYZ789", gate2);
 
@@ -159,7 +159,7 @@ tripdetail.addBaggage(baggage2);
 // console.log(tripdetail)
 
 
-// Create Employee objects----------------------------------------------------------------
+// -------------------------------------------USER STORY 5 (total of all emplyee) ------------------------------
 const employees = [
     new Employee(6000, "1", "John Doe", "1234567890", Gender.Male, JobCategory.crew),
     new Employee(10000, "2", "Jane Smith", "9876543210", Gender.Female, JobCategory.pilot),
