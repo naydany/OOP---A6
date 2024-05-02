@@ -24,8 +24,8 @@ let date = new DateTime(dates);
 let cons = date.getAllDate();
 
 // ------ flight ------------
-const flightA = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "Phnom Penn", "London",)
-const flightB = new Flight("ABA321", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "London", "Paris");
+const flightA = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "Phnom Penn", "London",[])
+const flightB = new Flight("ABA321", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "London", "Paris",[]);
 
 // -------- booking flight ---------
 let bookingflight = new BookingFlight([flightA], TicketType.OneWay, null);
@@ -35,17 +35,18 @@ bookingflight.getAllFlight(flightB);
 
 // -------------- booking trip ---------------
 let trip = new Trip('Paris',new Date(2024,3,5,7,30,0),new Date(2024,3,21,11,40,5),bookingflight);
-console.log(trip)
+// console.log(trip)
 
 
 
 // Console log Ticket
-let flightBooking = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "", "",);
+let flightBooking = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "", "",[]);
 //  StatusNooking
 let getStatusBooking = BookingStatus.CANCELLED;
 let getStatusBooking2 = BookingStatus.CONFIRMED;
 let Seatype = SeatType.Economy_classic;
 let Meal_passenger_sen = [Meal.Vegetarian, Meal.Vegan];
+let Meal_passenger_sen1 = [Meal.Forth, Meal.Dairy_free];
 
 // ------ address ------
 let location = [new Address("Pnom Penh", "Cambodia")];
@@ -60,7 +61,7 @@ const passengers1: Passenger[] = [
 
 // -------------------------------------------------schedul of flight------------------------------------------------
 // ------flight ABC123 ------------
-const flight = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "", "");
+const flight = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "", "",[]);
 
 const dateTime1 = new DateTime("2024-04-25 10:00");
 const dateTime2 = new DateTime("2024-04-25 12:00");
@@ -68,7 +69,7 @@ const fromAddress = new Address("Pnom Penh", "Cambodia");
 const toAddress = new Address("Paris", "French");
 
 //---------flight ABA321 --------------
-const flight2 = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "", "");
+const flight2 = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "", "",[]);
 const dateTime3 = new DateTime("2024-04-25 12:00");
 const dateTime4 = new DateTime("2024-04-26 5:00");
 const fromAddress1 = new Address("Pnom Penh", "Cambodia");
@@ -90,8 +91,8 @@ const scheduleFlight2 = new ScheduleFlight(
 
 
 // Create instances of Flight for the pilot's flights ----------------------------------------------------------------
-const flight1 = new Flight("FL123", dateTime1, dateTime2, "Origin City 1", "Destination City 1");
-const flight3 = new Flight("FL456", dateTime3, dateTime4, "Origin City 2", "Destination City 2");
+const flight1 = new Flight("FL123", dateTime1, dateTime2, "Origin City 1", "Destination City 1",[]);
+const flight3 = new Flight("FL456", dateTime3, dateTime4, "Origin City 2", "Destination City 2",[]);
 
 // Create an array of flights for the pilot
 const pilotFlights = [flight1, flight2];
@@ -114,9 +115,21 @@ const gate2 = new Gate("B3", "London");
 //  booking
 const bookingFlightReferences = new BookingFlight([flight], TicketType.Return, null);
 let BookingTicketPassenger1 = new Booking('200$', 876543, "Cambodia", "doda@gmail.com", getStatusBooking2, Meal_passenger_sen, passengers1[0], null, null, []);
-let BookingTicketPassenger_2 = new Booking('500$', 345678, "Finlane", "vanny@gmail.com", getStatusBooking, Meal_passenger_sen, passengers1[1], null, null, [bookingFlightReferences]);
+let BookingTicketPassenger_2 = new Booking('500$', 345678, "Finlane", "vanny@gmail.com", getStatusBooking, Meal_passenger_sen1, passengers1[1], null, null, [bookingFlightReferences]);
 
+// meal ------
+let meal1 = BookingTicketPassenger1.getMeal();
+let meal2 = BookingTicketPassenger_2.getMeal();
 
+let manyMeal =[];
+manyMeal.push(meal1,meal2);
+
+const flightl = new Flight("FL123", dateTime1, dateTime2, "Origin City 1", "Destination City 1",manyMeal);
+
+let meal= flightl.getMeal();
+console.log(meal);
+
+//----------------------------------------------------------------
 const plane1 = new Airoplane("ABC123", gate1);
 const plane2 = new Airoplane("XYZ789", gate2);
 
@@ -140,7 +153,7 @@ tripdetail.addFlight(flightA);
 tripdetail.addFlight(flightB);
 tripdetail.addBaggage(baggage1);
 tripdetail.addBaggage(baggage2);
-console.log(tripdetail)
+// console.log(tripdetail)
 
 
 // Create Employee objects----------------------------------------------------------------
@@ -210,5 +223,5 @@ passengers[1].addTicket(Ticket_passenger_02);
 // Get return ticket count and details for passenger1 and passenger2
 const returnTicketCountPassenger1 = passengers[0].getReturnTicketPassengerCount();
 const returnTicketCountPassenger2 = passengers[1].getReturnTicketPassengerCount();
-console.log(`Number of passengers with return tickets: ${returnTicketCountPassenger1}`);
-console.log(`Airline manager :`, returnTicketCountPassenger2)
+// console.log(`Number of passengers with return tickets: ${returnTicketCountPassenger1}`);
+// console.log(`Airline manager :`, returnTicketCountPassenger2)
