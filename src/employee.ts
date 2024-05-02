@@ -1,9 +1,11 @@
 import { JobCategory, Gender } from "./enum";
 import { Person } from "./person";
+import { TripDetail } from "./tripDetail";
 
 export class Employee extends Person {
     private salary: number;
     private position: JobCategory;
+    private tripDetails: TripDetail[]=[];
     constructor(salary: number,id:string, name: string, phoneNumber: string,gender:Gender,position: JobCategory) {
         super(id,name, phoneNumber);
         this.salary = salary;
@@ -36,6 +38,10 @@ export class Employee extends Person {
         return JobCategory.airportManager;
     }
 
+    getairlineController(): JobCategory{
+        return JobCategory.airlineController;
+    }
+
     getbaggageHandler(): JobCategory {
         return JobCategory.baggageHandler;
     }
@@ -48,5 +54,8 @@ export class Employee extends Person {
         return this.position;
     }
 
-    
+    addTripDetail(tripDetail:TripDetail): void {
+        this.tripDetails.push(tripDetail);
+    }
+
 }

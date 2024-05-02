@@ -2,7 +2,7 @@
 import { DateTime } from "./dateTime";
 import { Booking } from "./booking";
 import { Passenger } from "./passenger";
-import { BookingStatus, Meal, SeatType, Gender, JobCategory, TicketType } from "./enum";
+import { BookingStatus, Meal, SeatType, Gender, JobCategory, TicketType, Economy_classic,Economy_flex,Business_class } from "./enum";
 import { Address } from "./address";
 import { Flight } from "./flight";
 import { ScheduleFlight } from "./scheduleFlight";
@@ -37,6 +37,9 @@ bookingflight.getAllFlight(flightB);
 let trip = new Trip('Paris',new Date(2024,3,5,7,30,0),new Date(2024,3,21,11,40,5),bookingflight);
 console.log(trip)
 
+
+// ----------------- seats --------------
+let seat = new Seats(SeatType.Economy_flex,Economy_flex.B2);
 
 
 // Console log Ticket
@@ -151,9 +154,16 @@ const employees = [
     new Employee(12000, "4", "Emily Davis", "1112223334", Gender.Female, JobCategory.airportManager),
     new Employee(5000, "5", "Michael Brown", "4445556667", Gender.Male, JobCategory.chef),
     new Employee(9000, "6", "Sarah Wilson", "8889990001", Gender.Female, JobCategory.airportManager),
+    new Employee(11000, "6", "Sarah Wilson", "8889990001", Gender.Male, JobCategory.airlineController),
     new Employee(4000, "7", "Robert Lee", "7778889990", Gender.Male, JobCategory.baggageHandler),
 
 ];
+
+
+// ------------- Airline Controller -----------------
+const airlinecontroller = employees[6].addTripDetail;
+// console.log(airlinecontroller)
+
 
 // Retrieve the salary by position 
 function getSalaryByPosition(jobCategory: JobCategory): number {
@@ -212,3 +222,6 @@ const returnTicketCountPassenger1 = passengers[0].getReturnTicketPassengerCount(
 const returnTicketCountPassenger2 = passengers[1].getReturnTicketPassengerCount();
 console.log(`Number of passengers with return tickets: ${returnTicketCountPassenger1}`);
 console.log(`Airline manager :`, returnTicketCountPassenger2)
+
+
+
