@@ -6,10 +6,11 @@ export class Employee extends Person {
     private salary: number;
     private position: JobCategory;
     private tripDetails: TripDetail[]=[];
-    constructor(salary: number,id:string, name: string, phoneNumber: string,gender:Gender,position: JobCategory) {
-        super(id,name, phoneNumber);
+
+    constructor(salary: number, id: string, name: string, phoneNumber: string, gender: Gender, position: JobCategory) {
+        super(id, name, phoneNumber);
         this.salary = salary;
-        this.position=position;
+        this.position = position;
     }
 
     getName(): string {
