@@ -1,13 +1,13 @@
-import { seats } from "./seats";
+import { Seats } from "./seats";
 
 export class Airport {
     // private codeFlight:string;
     private airCraft: string;
-    private seat: seats[];
+    private seat: Seats[];
     constructor(airCraft: string) {
         this.airCraft = airCraft;
     }
-    getSeat(): seats[] {
+    getSeat(): Seats[] {
         return this.seat;
     }
 

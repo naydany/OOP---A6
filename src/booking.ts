@@ -10,7 +10,7 @@ export class Booking {
     private natinality: string;
     private email: string;
     private bookingStatus: BookingStatus;
-    private meal: Meal[] | null;
+    public meal: Meal[] | null;
     private passengers: Passenger;
     private trip: Trip[] | null;
     private baggage: Baggage[] | null;
@@ -42,9 +42,13 @@ export class Booking {
     //     return this.bookingStatus;
     // }
 
-    // getMeal(): Meal[] {
-    //     return this.meal;
-    // }
+    getMeal(): Meal[] {
+        return this.meal;
+    }
+
+    getEmail(): string {
+        return this.email;
+    }
 
     
 }

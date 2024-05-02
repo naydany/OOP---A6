@@ -15,5 +15,3 @@ export class Seats{
   
 }
 
-// let seat = new Seats(SeatType.Economy_flex,Economy_flex.B2);
-// console.log(seat)

@@ -7,6 +7,7 @@ export enum JobCategory {
     airlineManage="airlineManager",
     chef="chef",
     airportManager="airportManager",
+    airlineController="airlineController",
     baggageHandler="baggageHandler",
 }
 

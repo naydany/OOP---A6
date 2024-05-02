@@ -1,5 +1,8 @@
 import { DateTime } from "./dateTime";
 import { Passenger } from "./passenger";
+import { Meal, TicketType } from "./enum";
+import { Ticket } from "./ticket";
+import { Booking } from "./booking";
 
 export class Flight {
     private flightNumber: string;
@@ -8,14 +11,16 @@ export class Flight {
     private origin: string;
     private destination: string;
     private passengers: Passenger[];
+    private meals:Meal[];
+    constructor(flightNumber: string, departureTime: DateTime, arrivalTime: DateTime, origin: string, destination: string, passengers: Passenger[],meals:Meal[]) {
 
-    constructor(flightNumber: string, departureTime: DateTime, arrivalTime: DateTime, origin: string, destination: string, passengers: Passenger[]) {
         this.flightNumber = flightNumber;
         this.departureTime = departureTime;
         this.arrivalTime = arrivalTime;
         this.origin = origin;
         this.destination = destination;
-        this.passengers = passengers; // Correct assignment
+        this.passengers = passengers;
+        this.meals = meals;
     }
 
     getDepartureTime(): DateTime {
@@ -24,6 +29,10 @@ export class Flight {
 
     getArriveTime(): DateTime {
         return this.arrivalTime;
+    }
+
+    getMeal():Meal[]{
+        return this.meals;
     }
 
     getPassengersWithReturnTicketsCount(): number {
