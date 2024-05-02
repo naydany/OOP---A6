@@ -16,6 +16,8 @@ import { Baggage } from "./baggage";
 import { Employee } from "./employee";
 import { Ticket } from "./ticket";
 import { Airoplane } from "./airoplane";
+import { Airport } from "./airport";
+import { Airline } from "./airline";
 
 
 // Console log Date
@@ -143,7 +145,7 @@ tripdetail.addFlight(flightA);
 tripdetail.addFlight(flightB);
 tripdetail.addBaggage(baggage1);
 tripdetail.addBaggage(baggage2);
-console.log(tripdetail)
+// console.log(tripdetail)
 
 
 // Create Employee objects----------------------------------------------------------------
@@ -224,4 +226,15 @@ console.log(`Number of passengers with return tickets: ${returnTicketCountPassen
 console.log(`Airline manager :`, returnTicketCountPassenger2)
 
 
+// -------- Airline --------
+const airline = new Airline('Cambodia Angkor Air','k6');
+airline.addFlight(flightA);
+airline.addFlight(flightB);
+
+// -------AirPort ----
+const airport = new Airport('Phnom Penh International Airport');
+airport.addGate(gate1)
+airport.addGate(gate2)
+airport.addAirline(airline)
+console.log(airport)
 
