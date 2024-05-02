@@ -10,7 +10,6 @@ export class Ticket {
     private booking: Booking[];
     private seats: SeatType;
     public ticketType: TicketType;
-    private bookingFlight: BookingFlight[];
 
     constructor(seats: SeatType, flight: Flight, booking: Booking[], passenger: Passenger, ticketType: TicketType) {
         this.seats = seats;
@@ -18,10 +17,14 @@ export class Ticket {
         this.booking = booking;
         this.passenger = passenger;
         this.ticketType = ticketType;
-        this.bookingFlight = [];
     }
 
     getTickets(): TicketType {
         return this.ticketType;
     }
+    isReturnTicket() {
+        return this.ticketType;
+    }
+
+
 }
