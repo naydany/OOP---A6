@@ -1,5 +1,5 @@
 
-import { Economy_classic, Economy_flex, Business_class, SeatType } from "./enum";
+import { Economy_classic, Economy_flex, Business_class, SeatType } from "../../../enum/enum";
 
 export class Seats{
     private seattype:SeatType;

@@ -1,5 +1,5 @@
-import { Airline } from "./airline";
-import { Airport } from "./airport";
+import { Airline } from "../../airline/airline";
+import { Airport } from "../../airport";
 
 export class Route{
     private origin:string;

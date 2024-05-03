@@ -1,4 +1,4 @@
-import { Gender } from "./enum";
+import { Gender } from "../enum/enum";
 
 export abstract class Person {
     protected id: string;

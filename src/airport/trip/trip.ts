@@ -1,6 +1,6 @@
 
-import { BookingFlight } from "./bookingFlight";
-import { DateTime } from "./dateTime";
+import { BookingFlight } from "../../booking/bookingFlight";
+import { DateTime } from "../dateTime/dateTime";
 
 export class Trip {
     private detinationTrip:string;

@@ -1,8 +1,8 @@
-import { Flight } from "./flight";
-import { Booking } from "./booking";
-import { SeatType, TicketType, } from "./enum";
-import { Passenger } from "./passenger";
-import { BookingFlight } from "./bookingFlight";
+import { Flight } from "../../airport/trip/flight/flight";
+import { Booking } from "../bookingFlight/booking";
+import { SeatType, TicketType, } from "../../enum/enum";
+import { Passenger } from "../../person/passenger/passenger";
+import { BookingFlight } from "../bookingFlight";
 
 export class Ticket {
     private flight: Flight;
