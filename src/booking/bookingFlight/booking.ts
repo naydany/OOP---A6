@@ -1,9 +1,9 @@
-import { BookingStatus, Meal } from "./enum";
-import { Baggage } from "./baggage";
-import { Trip } from "./trip";
-import { BookingFlight } from "./bookingFlight";
-import { Passenger } from "./passenger";
-import { Payment } from "./payment";
+import { BookingStatus, Meal } from "../../enum/enum";
+import { Baggage } from "../baggage/baggage";
+import { Trip } from "../../airport/trip/trip";
+import { BookingFlight } from "../bookingFlight";
+import { Passenger } from "../../person/passenger/passenger";
+import { Payment } from "../payment/payment";
 
 export class Booking {
     private prices: string;

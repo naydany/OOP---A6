@@ -1,6 +1,6 @@
-import { Employee } from "./employee";
-import { JobCategory,Gender } from "./enum";
-import { Flight } from "./flight";
+import { Employee } from "../employee";
+import { JobCategory,Gender } from "../../../enum/enum";
+import { Flight } from "../../../airport/trip/flight/flight";
 
 export class Pilot extends Employee {
     private flight:Flight[];

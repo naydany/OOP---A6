@@ -1,7 +1,7 @@
 
-import { Flight } from "./flight";
-import { Passenger } from "./passenger";
-import { Baggage } from "./baggage";
+import { Flight } from "../flight/flight";
+import { Passenger } from "../../../person/passenger/passenger";
+import { Baggage } from "../../../booking/baggage/baggage";
 
 export class TripDetail{
     private flights:Flight[]=[];

@@ -1,6 +1,6 @@
-import { Seats } from "./seats";
-import { Airline } from "./airline";
-import { Gate } from "./gate";
+import { Seats } from "./trip/seatLaout/seats";
+import { Airline } from "./airline/airline";
+import { Gate } from "./gate/gate";
 
 export class Airport {
 

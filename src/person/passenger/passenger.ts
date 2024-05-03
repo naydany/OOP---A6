@@ -1,6 +1,6 @@
-import { Person } from "./person";
-import { Gender, TicketType } from "./enum";
-import { Ticket } from "./ticket";
+import { Person } from "../person";
+import { Gender, TicketType } from "../../enum/enum";
+import { Ticket } from "../../booking/ticket/ticket";
 
 export class Passenger extends Person {
     private gender: Gender;

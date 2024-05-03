@@ -1,9 +1,9 @@
-import { DateTime } from "./dateTime";
-import { Passenger } from "./passenger";
-import { Meal, TicketType } from "./enum";
-import { Ticket } from "./ticket";
-import { Booking } from "./booking";
-import { Route } from "./route";
+import { DateTime } from "../../dateTime/dateTime";
+import { Passenger } from "../../../person/passenger/passenger";
+import { Meal, TicketType } from "../../../enum/enum";
+import { Ticket } from "../../../booking/ticket/ticket";
+import { Booking } from "../../../booking/bookingFlight/booking";
+import { Route } from "../route/route";
 
 export class Flight {
     private flightNumber: string;

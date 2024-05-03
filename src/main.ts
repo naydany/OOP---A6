@@ -1,25 +1,25 @@
 // this import for other
-import { DateTime } from "./dateTime";
-import { Booking } from "./booking";
-import { Passenger } from "./passenger";
-import { BookingStatus, Meal, SeatType, Gender, JobCategory, TicketType, Economy_classic, Economy_flex, Business_class } from "./enum";
-import { Address } from "./address";
-import { Flight } from "./flight";
-import { ScheduleFlight } from "./scheduleFlight";
-import { Seats } from "./seats";
-import { Pilot } from "./pilot";
-import { Gate } from "./gate";
-import { BookingFlight } from "./bookingFlight";
-import { Trip } from "./trip";
-import { TripDetail } from "./tripDetail";
-import { Baggage } from "./baggage";
-import { Employee } from "./employee";
-import { Ticket } from "./ticket";
-import { Airoplane } from "./airoplane";
-import { Airport } from "./airport";
-import { Airline } from "./airline";
-import { Payment } from "./payment";
-import { Route } from "./route";
+import { DateTime } from "./airport/dateTime/dateTime";
+import { Booking } from "./booking/bookingFlight/booking";
+import { Passenger } from "./person/passenger/passenger";
+import { BookingStatus, Meal, SeatType, Gender, JobCategory, TicketType, Economy_classic, Economy_flex, Business_class } from "./enum/enum";
+import { Address } from "./airport/trip/route/address";
+import { Flight } from "./airport/trip/flight/flight";
+import { ScheduleFlight } from "./airport/trip/flight/scheduleFlght/scheduleFlight";
+import { Seats } from "./airport/trip/seatLaout/seats";
+import { Pilot } from "./person/employee/pilot/pilot";
+import { Gate } from "./airport/gate/gate";
+import { BookingFlight } from "./booking/bookingFlight";
+import { Trip } from "./airport/trip/trip";
+import { TripDetail } from "./airport/trip/tripDetail/tripDetail";
+import { Baggage } from "./booking/baggage/baggage";
+import { Employee } from "./person/employee/employee";
+import { Ticket } from "./booking/ticket/ticket";
+import { Airoplane } from "./airport/trip/airplan/airoplane";
+import { Airport } from "./airport/airport";
+import { Airline } from "./airport/airline/airline";
+import { Payment } from "./booking/payment/payment";
+import { Route } from "./airport/trip/route/route";
 
 
 // Console log Date

@@ -1,6 +1,9 @@
 
-import { Flight } from "./flight";
-import { BookingStatus, TicketType } from "./enum";
+import { Flight } from "../airport/trip/flight/flight";
+import { BookingStatus, TicketType } from "../enum/enum";
+import { Ticket } from "./ticket/ticket";
+import { Trip } from "../airport/trip/trip";
+
 
 export class BookingFlight {
     private flight: Flight[] = [];
