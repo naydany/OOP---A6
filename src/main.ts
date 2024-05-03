@@ -2,7 +2,7 @@
 import { DateTime } from "./dateTime";
 import { Booking } from "./booking";
 import { Passenger } from "./passenger";
-import { BookingStatus, Meal, SeatType, Gender, JobCategory, TicketType, Economy_classic,Economy_flex,Business_class } from "./enum";
+import { BookingStatus, Meal, SeatType, Gender, JobCategory, TicketType, Economy_classic, Economy_flex, Business_class } from "./enum";
 import { Address } from "./address";
 import { Flight } from "./flight";
 import { ScheduleFlight } from "./scheduleFlight";
@@ -18,6 +18,7 @@ import { Ticket } from "./ticket";
 import { Airoplane } from "./airoplane";
 import { Airport } from "./airport";
 import { Airline } from "./airline";
+import { Payment } from "./payment";
 
 
 // Console log Date
@@ -26,8 +27,8 @@ let date = new DateTime(dates);
 let cons = date.getAllDate();
 
 // ------ flight ------------
-const flightA = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "Phnom Penn", "London",[], null)
-const flightB = new Flight("ABA321", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "London", "Paris",[],null);
+const flightA = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "Phnom Penn", "London", [], null)
+const flightB = new Flight("ABA321", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "London", "Paris", [], null);
 
 // -------- booking flight ---------
 let bookingflight = new BookingFlight([flightA], TicketType.OneWay, null);
@@ -36,16 +37,16 @@ bookingflight.getAllFlight(flightB);
 // console.log(bookingflight)
 
 // -------------- booking trip ---------------
-let trip = new Trip('Paris',new Date(2024,3,5,7,30,0),new Date(2024,3,21,11,40,5),bookingflight);
+let trip = new Trip('Paris', new Date(2024, 3, 5, 7, 30, 0), new Date(2024, 3, 21, 11, 40, 5), bookingflight);
 // console.log(trip)
 
 
 // ----------------- seats --------------
-let seat = new Seats(SeatType.Economy_flex,Economy_flex.B2);
+let seat = new Seats(SeatType.Economy_flex, Economy_flex.B2);
 
 
 // Console log Ticket
-let flightBooking = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "", "",[],null);
+let flightBooking = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "", "", [], null);
 //  StatusNooking
 let getStatusBooking = BookingStatus.CANCELLED;
 let getStatusBooking2 = BookingStatus.CONFIRMED;
@@ -66,7 +67,7 @@ const passengers1: Passenger[] = [
 
 // -------------------------------------------------schedul of flight------------------------------------------------
 // ------flight ABC123 ------------
-const flight = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "", "",[],null);
+const flight = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "", "", [], null);
 
 const dateTime1 = new DateTime("2024-04-25 10:00");
 const dateTime2 = new DateTime("2024-04-25 12:00");
@@ -74,7 +75,7 @@ const fromAddress = new Address("Pnom Penh", "Cambodia");
 const toAddress = new Address("Paris", "French");
 
 //---------flight ABA321 --------------
-const flight2 = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "", "", null,null);
+const flight2 = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "", "", null, null);
 const dateTime3 = new DateTime("2024-04-25 12:00");
 const dateTime4 = new DateTime("2024-04-26 5:00");
 const fromAddress1 = new Address("Pnom Penh", "Cambodia");
@@ -96,8 +97,8 @@ const scheduleFlight2 = new ScheduleFlight(
 
 
 // Create instances of Flight for the pilot's flights ----------------------------------------------------------------
-const flight1 = new Flight("FL123", dateTime1, dateTime2, "Origin City 1", "Destination City 1", passengers1,null);
-const flight3 = new Flight("FL456", dateTime3, dateTime4, "Origin City 2", "Destination City 2", passengers1,null);
+const flight1 = new Flight("FL123", dateTime1, dateTime2, "Origin City 1", "Destination City 1", passengers1, null);
+const flight3 = new Flight("FL456", dateTime3, dateTime4, "Origin City 2", "Destination City 2", passengers1, null);
 
 // Create an array of flights for the pilot
 const pilotFlights = [flight1, flight2];
@@ -117,25 +118,29 @@ const gate2 = new Gate("B3", "London");
 
 // ------------------------------------------------Booking Ticket----------------------------------------
 
+//   PaymentBooking
+let paymentBooking_01 = new Payment('1', "400");
+let paymentBooking_02 = new Payment('2', "500");
+
 //  booking
 const bookingFlightReferences = new BookingFlight([flight], TicketType.Return, null);
-let BookingTicketPassenger1 = new Booking('200$', 876543, "Cambodia", "doda@gmail.com", getStatusBooking2, Meal_passenger_sen, passengers1[0], null, null, []);
+let BookingTicketPassenger1 = new Booking('200$', 876543, "Cambodia", "doda@gmail.com", getStatusBooking2, Meal_passenger_sen, passengers1[0], null, null, [] );
 let BookingTicketPassenger_2 = new Booking('500$', 345678, "Finlane", "vanny@gmail.com", getStatusBooking, Meal_passenger_sen1, passengers1[1], null, null, [bookingFlightReferences]);
-
-
+BookingTicketPassenger1.addPayment(paymentBooking_02);
+console.log(BookingTicketPassenger1);
 
 
 // ------------------------------------USER STURY 7 (meal type of flight)------------------------------------------------
 let meal1 = BookingTicketPassenger1.getMeal();
 let meal2 = BookingTicketPassenger_2.getMeal();
 
-let manyMeal =[];
-manyMeal.push(meal1,meal2);
+let manyMeal = [];
+manyMeal.push(meal1, meal2);
 
-const flightl = new Flight("FL123", dateTime1, dateTime2, "Origin City 1", "Destination City 1",passengers1 ,manyMeal,);
+const flightl = new Flight("FL123", dateTime1, dateTime2, "Origin City 1", "Destination City 1", passengers1, manyMeal,);
 
-let mealType= flightl.getMeal();
-console.log(mealType);
+let mealType = flightl.getMeal();
+// console.log(mealType);
 
 
 //-------------------------------USER STORY 6 (gate for waiting)---------------------------------
@@ -167,14 +172,14 @@ tripdetail.addBaggage(baggage2);
 
 // -------------------------------------------USER STORY 5 (total of all emplyee) ------------------------------
 const employees = [
-    new Employee(6000, "1", "John Doe", "1234567890", Gender.Male, JobCategory.crew),
-    new Employee(10000, "2", "Jane Smith", "9876543210", Gender.Female, JobCategory.pilot),
-    new Employee(8000, "3", "David Johnson", "5555555555", Gender.Male, JobCategory.co_pilot),
-    new Employee(12000, "4", "Emily Davis", "1112223334", Gender.Female, JobCategory.airportManager),
-    new Employee(5000, "5", "Michael Brown", "4445556667", Gender.Male, JobCategory.chef),
-    new Employee(9000, "6", "Sarah Wilson", "8889990001", Gender.Female, JobCategory.airportManager),
-    new Employee(11000, "6", "Sarah Wilson", "8889990001", Gender.Male, JobCategory.airlineController),
-    new Employee(4000, "7", "Robert Lee", "7778889990", Gender.Male, JobCategory.baggageHandler),
+  new Employee(6000, "1", "John Doe", "1234567890", Gender.Male, JobCategory.crew),
+  new Employee(10000, "2", "Jane Smith", "9876543210", Gender.Female, JobCategory.pilot),
+  new Employee(8000, "3", "David Johnson", "5555555555", Gender.Male, JobCategory.co_pilot),
+  new Employee(12000, "4", "Emily Davis", "1112223334", Gender.Female, JobCategory.airportManager),
+  new Employee(5000, "5", "Michael Brown", "4445556667", Gender.Male, JobCategory.chef),
+  new Employee(9000, "6", "Sarah Wilson", "8889990001", Gender.Female, JobCategory.airportManager),
+  new Employee(11000, "6", "Sarah Wilson", "8889990001", Gender.Male, JobCategory.airlineController),
+  new Employee(4000, "7", "Robert Lee", "7778889990", Gender.Male, JobCategory.baggageHandler),
 
 ];
 
@@ -211,14 +216,11 @@ const salaryOfPosition = getSalaryByPosition(JobCategory.pilot);
 // let BookingTicketPassenger_2 = new Booking('500$', 345678, "Finlane", "vanny@gmail.com", getStatusBooking, Meal_passenger_sen, passengers1[1], null, null, [bookingFlightReferences]);
 
 
-
-
-
 //  ticket 
 let Ticket_passenger = new Ticket(Seatype, flight2, [BookingTicketPassenger1], passengers1[0], TicketType.OneWay);
 let Ticket_passenger_01 = new Ticket(Seatype, flight, [BookingTicketPassenger_2], passengers1[1], TicketType.Return);
 let Ticket_passenger_02 = new Ticket(Seatype, flight2, [BookingTicketPassenger_2], passengers1[2], TicketType.Return);
-let Ticket_passenger_03 = new Ticket(Seatype, flight2, [BookingTicketPassenger_2], passengers1[2], TicketType.OneWay);
+let Ticket_passenger_03 = new Ticket(Seatype, flight2, [BookingTicketPassenger_2], passengers1[3], TicketType.OneWay);
 
 //  ticket that had been booking already
 // console.log(Ticket_passenger_01);
@@ -254,7 +256,7 @@ passengers[3].addTicket(Ticket_passenger_03);
 
 
 // Get return ticket count and details for passenger1 and passenger2
-const flight_01 = new Flight("FL123", dateTime1, dateTime2, "Origin City 1", "Destination City 1", passengers, manyMeal );
+const flight_01 = new Flight("FL123", dateTime1, dateTime2, "Origin City 1", "Destination City 1", passengers, manyMeal);
 console.log(flight_01)
 const passengersWithReturnTicketsCount = flight_01.getPassengersWithReturnTicketsCount();
 
@@ -262,21 +264,20 @@ const passengerWithReturnTicketsDetals = flight_01.getPassengersWithReturnTicket
 
 
 //  final console
-
-console.log("Airline Manager want to know passenger have ticket return", passengersWithReturnTicketsCount);
-console.log(`Informtion detail`, passengerWithReturnTicketsDetals);
+// console.log("Airline Manager want to know passenger have ticket return", passengersWithReturnTicketsCount);
+// console.log(`Informtion detail`, passengerWithReturnTicketsDetals);
 
 
 // -------- Airline --------
-const airline = new Airline('Cambodia Angkor Air','k6');
+const airline = new Airline('Cambodia Angkor Air', 'k6');
 airline.addFlight(flightA);
 airline.addFlight(flightB);
 
 // -------AirPort ----
 const airport = new Airport('Phnom Penh International Airport');
-airport.addGate(gate1)
+airport.addGate(gate1) 
 airport.addGate(gate2)
 airport.addAirline(airline)
-console.log(airport)
+// console.log(airport)
 
 // ----------------------------------------------------------------------------------------------

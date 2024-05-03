@@ -3,6 +3,7 @@ import { Baggage } from "./baggage";
 import { Trip } from "./trip";
 import { BookingFlight } from "./bookingFlight";
 import { Passenger } from "./passenger";
+import { Payment } from "./payment";
 
 export class Booking {
     private prices: string;
@@ -14,6 +15,7 @@ export class Booking {
     private passengers: Passenger;
     private trip: Trip[] | null;
     private baggage: Baggage[] | null;
+    private payments: Payment[] = [];
 
     constructor(
         price: string,
@@ -25,7 +27,8 @@ export class Booking {
         passengers: Passenger,
         trip: Trip | null,
         baggage: Baggage[] | null,
-        bookingReference: BookingFlight[] | null
+        bookingReference: BookingFlight[] | null,
+        // payment: Payment,
     ) {
         this.prices = price;
         this.passportNumber = passportNumber;
@@ -35,6 +38,7 @@ export class Booking {
         this.meal = meal;
         this.passengers = passengers;
         this.baggage = baggage;
+        // this.payment = payment;
     }
 
 
@@ -50,5 +54,9 @@ export class Booking {
         return this.email;
     }
 
-    
+    addPayment(payment: Payment) {
+        this.payments.push(payment);
+    }
+
+
 }
