@@ -22,11 +22,6 @@ export class Employee extends Person {
     getPilot(): JobCategory {
         return JobCategory.pilot;
     }
-
-    // getairline(): JobCategory {
-    //     return JobCategory.airlineManager;
-    // }
-
     getChef(): JobCategory {
         return JobCategory.chef;
     }

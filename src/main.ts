@@ -28,14 +28,14 @@ let date = new DateTime(dates);
 let cons = date.getAllDate();
 
 
- // ------ route -------------------
- let routeA =  new Route('Phnom Penn',"London","2000km");
- let routeB =  new Route('London',"Paris","3000km");
+// ------ route -------------------
+let routeA = new Route('Phnom Penn', "London", "2000km");
+let routeB = new Route('London', "Paris", "3000km");
 
 
 // ------ flight ------------
-const flightA = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), routeA,[], null)
-const flightB = new Flight("ABA321", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), routeB,[],null);
+const flightA = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), routeA, [], null)
+const flightB = new Flight("ABA321", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), routeB, [], null);
 
 console.log(flightA);
 
@@ -76,9 +76,9 @@ const passengers1: Passenger[] = [
 
 // -------------------------------------------------schedul of flight------------------------------------------------
 // ------flight ABC123 ------------
-const routeC = new Route('','','');
-const routeD = new Route('','','');
-const flight = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), routeC,[],null);
+const routeC = new Route('', '', '');
+const routeD = new Route('', '', '');
+const flight = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), routeC, [], null);
 
 const dateTime1 = new DateTime("2024-04-25 10:00");
 const dateTime2 = new DateTime("2024-04-25 12:00");
@@ -86,7 +86,7 @@ const fromAddress = new Address("Pnom Penh", "Cambodia");
 const toAddress = new Address("Paris", "French");
 
 //---------flight ABA321 --------------
-const flight2 = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), routeD, null,null);
+const flight2 = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), routeD, null, null);
 const dateTime3 = new DateTime("2024-04-25 12:00");
 const dateTime4 = new DateTime("2024-04-26 5:00");
 const fromAddress1 = new Address("Pnom Penh", "Cambodia");
@@ -108,10 +108,10 @@ const scheduleFlight2 = new ScheduleFlight(
 
 
 // Create instances of Flight for the pilot's flights ----------------------------------------------------------------
-const route01 = new Route( "Origin City 1", "Destination City 1","100km");
-const route02 = new Route( "Origin City 2", "Destination City 2","200km");
-const flight1 = new Flight("FL123", dateTime1, dateTime2,route01, passengers1,null);
-const flight3 = new Flight("FL456", dateTime3, dateTime4,route02 , passengers1,null);
+const route01 = new Route("Origin City 1", "Destination City 1", "100km");
+const route02 = new Route("Origin City 2", "Destination City 2", "200km");
+const flight1 = new Flight("FL123", dateTime1, dateTime2, route01, passengers1, null);
+const flight3 = new Flight("FL456", dateTime3, dateTime4, route02, passengers1, null);
 
 // Create an array of flights for the pilot
 const pilotFlights = [flight1, flight2];
@@ -137,10 +137,12 @@ let paymentBooking_02 = new Payment('2', "500");
 
 //  booking
 const bookingFlightReferences = new BookingFlight([flight], TicketType.Return, null);
-let BookingTicketPassenger1 = new Booking('200$', 876543, "Cambodia", "doda@gmail.com", getStatusBooking2, Meal_passenger_sen, passengers1[0], null, null, [] );
+let BookingTicketPassenger1 = new Booking('200$', 876543, "Cambodia", "doda@gmail.com", getStatusBooking2, Meal_passenger_sen, passengers1[0], null, null, []);
 let BookingTicketPassenger_2 = new Booking('500$', 345678, "Finlane", "vanny@gmail.com", getStatusBooking, Meal_passenger_sen1, passengers1[1], null, null, [bookingFlightReferences]);
 BookingTicketPassenger1.addPayment(paymentBooking_02);
+
 // BookingTicketPassenger1.addPayment(paymentBooking_01);
+//  passenger Booking ticket 
 console.log(BookingTicketPassenger1);
 
 
@@ -152,10 +154,10 @@ let manyMeal = [];
 manyMeal.push(meal1, meal2);
 
 // const airport2 = new Airport('Phnom Penh International Airport');
-const route1 = new Route( "Origin City 1", "Destination City 1","5000km")
+const route1 = new Route("Origin City 1", "Destination City 1", "5000km")
 // route1.addAirport(airport2)
 // console.log(route1)
-const flightl = new Flight("FL123", dateTime1, dateTime2,route1,passengers1 ,manyMeal,);
+const flightl = new Flight("FL123", dateTime1, dateTime2, route1, passengers1, manyMeal,);
 
 let mealType = flightl.getMeal();
 // console.log(mealType);
@@ -243,6 +245,7 @@ let Ticket_passenger_03 = new Ticket(Seatype, flight2, [BookingTicketPassenger_2
 //  ticket that had been booking already
 // console.log(Ticket_passenger_01);
 
+
 //  ------------- basic Console  by other ---------------
 // console.log(Ticket_passenger)
 // ConsoleLog Booking Ticket
@@ -273,18 +276,21 @@ passengers[3].addTicket(Ticket_passenger_03);
 
 
 
-// Get return ticket count and details for passenger1 and passenger2
-const route_01 = new Route("Origin City 1", "Destination City 1","10000km")
-const flight_01 = new Flight("FL123", dateTime1, dateTime2,route_01 , passengers, manyMeal );
+// Get return ticket count and details for passenger1 and passenger2 (optional)
+const route_01 = new Route("Origin City 1", "Destination City 1", "10000km")
+const flight_01 = new Flight("FL123", dateTime1, dateTime2, route_01, passengers, manyMeal);
 // console.log(flight_01)
 const passengersWithReturnTicketsCount = flight_01.getPassengersWithReturnTicketsCount();
-
 const passengerWithReturnTicketsDetals = flight_01.getPassengersWithReturnTicketsDetail();
 
 
-//  final console
+//  final console Of Airline Manager want to know about the return tickets
+//  __________________________details for passenger return tickets_________________________
+
 console.log("Airline Manager want to know passenger have ticket return", passengersWithReturnTicketsCount);
+//  __________________________number of return tickets______________________________________
 console.log(`Informtion detail`, passengerWithReturnTicketsDetals);
+
 
 
 // -------- Airline --------

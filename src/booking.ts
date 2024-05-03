@@ -28,7 +28,6 @@ export class Booking {
         trip: Trip | null,
         baggage: Baggage[] | null,
         bookingReference: BookingFlight[] | null,
-        // payment: Payment,
     ) {
         this.prices = price;
         this.passportNumber = passportNumber;
@@ -38,13 +37,7 @@ export class Booking {
         this.meal = meal;
         this.passengers = passengers;
         this.baggage = baggage;
-        // this.payment = payment;
     }
-
-
-    // getBookingStatus(): BookingStatus {
-    //     return this.bookingStatus;
-    // }
 
     getMeal(): Meal[] {
         return this.meal;
