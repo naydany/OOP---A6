@@ -1,6 +1,6 @@
-import { JobCategory, Gender } from "./enum";
-import { Person } from "./person";
-import { TripDetail } from "./tripDetail";
+import { JobCategory, Gender } from "../../enum/enum";
+import { Person } from "../person";
+import { TripDetail } from "../../airport/trip/tripDetail/tripDetail";
 
 export class Employee extends Person {
     private salary: number;
@@ -22,11 +22,6 @@ export class Employee extends Person {
     getPilot(): JobCategory {
         return JobCategory.pilot;
     }
-
-    // getairline(): JobCategory {
-    //     return JobCategory.airlineManager;
-    // }
-
     getChef(): JobCategory {
         return JobCategory.chef;
     }

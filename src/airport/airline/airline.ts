@@ -1,4 +1,4 @@
-import { Flight } from "./flight";
+import { Flight } from "../trip/flight/flight";
 
 export class Airline{
     private airlineName:string;

@@ -1,9 +1,9 @@
-import { BookingStatus, Meal } from "./enum";
-import { Baggage } from "./baggage";
-import { Trip } from "./trip";
-import { BookingFlight } from "./bookingFlight";
-import { Passenger } from "./passenger";
-import { Payment } from "./payment";
+import { BookingStatus, Meal } from "../../enum/enum";
+import { Baggage } from "../baggage/baggage";
+import { Trip } from "../../airport/trip/trip";
+import { BookingFlight } from "../bookingFlight";
+import { Passenger } from "../../person/passenger/passenger";
+import { Payment } from "../payment/payment";
 
 export class Booking {
     private prices: string;
@@ -28,7 +28,6 @@ export class Booking {
         trip: Trip | null,
         baggage: Baggage[] | null,
         bookingReference: BookingFlight[] | null,
-        // payment: Payment,
     ) {
         this.prices = price;
         this.passportNumber = passportNumber;
@@ -38,13 +37,7 @@ export class Booking {
         this.meal = meal;
         this.passengers = passengers;
         this.baggage = baggage;
-        // this.payment = payment;
     }
-
-
-    // getBookingStatus(): BookingStatus {
-    //     return this.bookingStatus;
-    // }
 
     getMeal(): Meal[] {
         return this.meal;

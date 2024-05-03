@@ -1,7 +1,7 @@
 // Import statements
-import { DateTime } from "./dateTime";
-import { Flight } from "./flight";
-import { Address } from "./address";
+import { DateTime } from "../../../dateTime/dateTime";
+import { Flight } from "../flight";
+import { Address } from "../../route/address";
 
 export class ScheduleFlight {
   protected flight: Flight;

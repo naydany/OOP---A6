@@ -1,4 +1,4 @@
-import { Gate } from "./gate";
+import { Gate } from "../../gate/gate";
 
 export class Airoplane {
     public planeNumber: string;
