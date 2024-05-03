@@ -19,6 +19,7 @@ import { Airoplane } from "./airoplane";
 import { Airport } from "./airport";
 import { Airline } from "./airline";
 import { Payment } from "./payment";
+import { Route } from "./route";
 
 
 // Console log Date
@@ -26,9 +27,17 @@ let dates = new Date();
 let date = new DateTime(dates);
 let cons = date.getAllDate();
 
+
+ // ------ route -------------------
+ let routeA =  new Route('Phnom Penn',"London","2000km");
+ let routeB =  new Route('London',"Paris","3000km");
+
+
 // ------ flight ------------
-const flightA = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "Phnom Penn", "London", [], null)
-const flightB = new Flight("ABA321", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "London", "Paris", [], null);
+const flightA = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), routeA,[], null)
+const flightB = new Flight("ABA321", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), routeB,[],null);
+
+console.log(flightA);
 
 // -------- booking flight ---------
 let bookingflight = new BookingFlight([flightA], TicketType.OneWay, null);
@@ -46,7 +55,7 @@ let seat = new Seats(SeatType.Economy_flex, Economy_flex.B2);
 
 
 // Console log Ticket
-let flightBooking = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "", "", [], null);
+// let flightBooking = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "", "",[],null);
 //  StatusNooking
 let getStatusBooking = BookingStatus.CANCELLED;
 let getStatusBooking2 = BookingStatus.CONFIRMED;
@@ -67,7 +76,9 @@ const passengers1: Passenger[] = [
 
 // -------------------------------------------------schedul of flight------------------------------------------------
 // ------flight ABC123 ------------
-const flight = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "", "", [], null);
+const routeC = new Route('','','');
+const routeD = new Route('','','');
+const flight = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), routeC,[],null);
 
 const dateTime1 = new DateTime("2024-04-25 10:00");
 const dateTime2 = new DateTime("2024-04-25 12:00");
@@ -75,7 +86,7 @@ const fromAddress = new Address("Pnom Penh", "Cambodia");
 const toAddress = new Address("Paris", "French");
 
 //---------flight ABA321 --------------
-const flight2 = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), "", "", null, null);
+const flight2 = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), routeD, null,null);
 const dateTime3 = new DateTime("2024-04-25 12:00");
 const dateTime4 = new DateTime("2024-04-26 5:00");
 const fromAddress1 = new Address("Pnom Penh", "Cambodia");
@@ -97,8 +108,10 @@ const scheduleFlight2 = new ScheduleFlight(
 
 
 // Create instances of Flight for the pilot's flights ----------------------------------------------------------------
-const flight1 = new Flight("FL123", dateTime1, dateTime2, "Origin City 1", "Destination City 1", passengers1, null);
-const flight3 = new Flight("FL456", dateTime3, dateTime4, "Origin City 2", "Destination City 2", passengers1, null);
+const route01 = new Route( "Origin City 1", "Destination City 1","100km");
+const route02 = new Route( "Origin City 2", "Destination City 2","200km");
+const flight1 = new Flight("FL123", dateTime1, dateTime2,route01, passengers1,null);
+const flight3 = new Flight("FL456", dateTime3, dateTime4,route02 , passengers1,null);
 
 // Create an array of flights for the pilot
 const pilotFlights = [flight1, flight2];
@@ -127,6 +140,7 @@ const bookingFlightReferences = new BookingFlight([flight], TicketType.Return, n
 let BookingTicketPassenger1 = new Booking('200$', 876543, "Cambodia", "doda@gmail.com", getStatusBooking2, Meal_passenger_sen, passengers1[0], null, null, [] );
 let BookingTicketPassenger_2 = new Booking('500$', 345678, "Finlane", "vanny@gmail.com", getStatusBooking, Meal_passenger_sen1, passengers1[1], null, null, [bookingFlightReferences]);
 BookingTicketPassenger1.addPayment(paymentBooking_02);
+// BookingTicketPassenger1.addPayment(paymentBooking_01);
 console.log(BookingTicketPassenger1);
 
 
@@ -137,7 +151,11 @@ let meal2 = BookingTicketPassenger_2.getMeal();
 let manyMeal = [];
 manyMeal.push(meal1, meal2);
 
-const flightl = new Flight("FL123", dateTime1, dateTime2, "Origin City 1", "Destination City 1", passengers1, manyMeal,);
+// const airport2 = new Airport('Phnom Penh International Airport');
+const route1 = new Route( "Origin City 1", "Destination City 1","5000km")
+// route1.addAirport(airport2)
+// console.log(route1)
+const flightl = new Flight("FL123", dateTime1, dateTime2,route1,passengers1 ,manyMeal,);
 
 let mealType = flightl.getMeal();
 // console.log(mealType);
@@ -256,16 +274,17 @@ passengers[3].addTicket(Ticket_passenger_03);
 
 
 // Get return ticket count and details for passenger1 and passenger2
-const flight_01 = new Flight("FL123", dateTime1, dateTime2, "Origin City 1", "Destination City 1", passengers, manyMeal);
-console.log(flight_01)
+const route_01 = new Route("Origin City 1", "Destination City 1","10000km")
+const flight_01 = new Flight("FL123", dateTime1, dateTime2,route_01 , passengers, manyMeal );
+// console.log(flight_01)
 const passengersWithReturnTicketsCount = flight_01.getPassengersWithReturnTicketsCount();
 
 const passengerWithReturnTicketsDetals = flight_01.getPassengersWithReturnTicketsDetail();
 
 
 //  final console
-// console.log("Airline Manager want to know passenger have ticket return", passengersWithReturnTicketsCount);
-// console.log(`Informtion detail`, passengerWithReturnTicketsDetals);
+console.log("Airline Manager want to know passenger have ticket return", passengersWithReturnTicketsCount);
+console.log(`Informtion detail`, passengerWithReturnTicketsDetals);
 
 
 // -------- Airline --------
@@ -274,10 +293,12 @@ airline.addFlight(flightA);
 airline.addFlight(flightB);
 
 // -------AirPort ----
-const airport = new Airport('Phnom Penh International Airport');
-airport.addGate(gate1) 
-airport.addGate(gate2)
-airport.addAirline(airline)
-// console.log(airport)
+const airport1 = new Airport('Phnom Penh International Airport');
+// const airport2 = new Airport('Phnom Penh International Airport')
+airport1.addGate(gate1)
+airport1.addGate(gate2)
+airport1.addAirline(airline)
+// console.log(airport1)
 
 // ----------------------------------------------------------------------------------------------
+
