@@ -37,7 +37,6 @@ let cons = date.getAllDate();
 const flightA = new Flight("ABC123", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), routeA,[], null)
 const flightB = new Flight("ABA321", new DateTime("2024-04-25 10:00"), new DateTime("2024-04-25 10:00"), routeB,[],null);
 
-console.log(flightA);
 
 // -------- booking flight ---------
 let bookingflight = new BookingFlight([flightA], TicketType.OneWay, null);
@@ -121,7 +120,7 @@ const pilot = new Pilot(5000, "P001", "John Rak", "123-456-7890", Gender.Male, p
 
 // Access the pilot's flights
 const flights = pilot.getFlights();
-// console.log('Pilot-Schedule',flights);
+console.log('Pilot-Schedule',flights);
 
 // gate for into the plane ---------------------------------------------------------------------------------------------
 const gate1 = new Gate("A1", "Paris");
@@ -141,7 +140,7 @@ let BookingTicketPassenger1 = new Booking('200$', 876543, "Cambodia", "doda@gmai
 let BookingTicketPassenger_2 = new Booking('500$', 345678, "Finlane", "vanny@gmail.com", getStatusBooking, Meal_passenger_sen1, passengers1[1], null, null, [bookingFlightReferences]);
 BookingTicketPassenger1.addPayment(paymentBooking_02);
 // BookingTicketPassenger1.addPayment(paymentBooking_01);
-console.log(BookingTicketPassenger1);
+// console.log(BookingTicketPassenger1);
 
 
 // ------------------------------------USER STURY 7 (meal type of flight)------------------------------------------------
@@ -283,8 +282,8 @@ const passengerWithReturnTicketsDetals = flight_01.getPassengersWithReturnTicket
 
 
 //  final console
-console.log("Airline Manager want to know passenger have ticket return", passengersWithReturnTicketsCount);
-console.log(`Informtion detail`, passengerWithReturnTicketsDetals);
+// console.log("Airline Manager want to know passenger have ticket return", passengersWithReturnTicketsCount);
+// console.log(`Infor/'mtion detail`, passengerWithReturnTicketsDetals);
 
 
 // -------- Airline --------
