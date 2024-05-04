@@ -48,7 +48,6 @@ bookingflight.getAllFlight(flightB);
 let trip = new Trip('Paris', new Date(2024, 3, 5, 7, 30, 0), new Date(2024, 3, 21, 11, 40, 5), bookingflight);
 // console.log(trip)
 
-
 // ----------------- seats --------------
 let seat = new Seats(SeatType.Economy_flex, Economy_flex.B2);
 
@@ -117,10 +116,11 @@ const pilotFlights = [flight1, flight2];
 
 // Create an instance of Pilot
 const pilot = new Pilot(5000, "P001", "John Rak", "123-456-7890", Gender.Male, pilotFlights, JobCategory.pilot);
+// console.log(pilot)
 
 // Access the pilot's flights
 const flights = pilot.getFlights();
-console.log('Pilot-Schedule',flights);
+// console.log('Pilot-Schedule',flights);
 
 // gate for into the plane ---------------------------------------------------------------------------------------------
 const gate1 = new Gate("A1", "Paris");
@@ -142,7 +142,7 @@ BookingTicketPassenger1.addPayment(paymentBooking_02);
 
 // BookingTicketPassenger1.addPayment(paymentBooking_01);
 //  passenger Booking ticket 
-console.log(BookingTicketPassenger1);
+// console.log(BookingTicketPassenger1);
 
 
 // ------------------------------------USER STURY 7 (meal type of flight)------------------------------------------------
@@ -174,21 +174,6 @@ const destination = plane1.getDestination();
 // console.log(`Your plane is waiting at Gate ${plane1.gate.gateNumber} for the destination: ${destination}`);
 
 
-// ------- Trip Detail --------
-const passenger1 = new Passenger('1', 'da', '+855 12 989 8877', Gender.Female);
-const passenger2 = new Passenger('1', 'ny', '+855 97 989 8877', Gender.Male);
-const baggage1 = new Baggage('S3', '22kg')
-const baggage2 = new Baggage('H3', '32kg')
-const tripdetail = new TripDetail()
-tripdetail.addPassenger(passenger1);
-tripdetail.addPassenger(passenger2);
-tripdetail.addFlight(flightA);
-tripdetail.addFlight(flightB);
-tripdetail.addBaggage(baggage1);
-tripdetail.addBaggage(baggage2);
-// console.log(tripdetail)
-
-
 // -------------------------------------------USER STORY 5 (total of all emplyee) ------------------------------
 const employees = [
   new Employee(6000, "1", "John Doe", "1234567890", Gender.Male, JobCategory.crew),
@@ -203,12 +188,29 @@ const employees = [
 ];
 
 
-// ------------- Airline Controller -----------------
+
+// -------User story1 Trip Detail --------
+const passenger1 = new Passenger('1', 'da', '+855 12 989 8877', Gender.Female);
+const passenger2 = new Passenger('1', 'ny', '+855 97 989 8877', Gender.Male);
+const baggage1 = new Baggage('S3', '22kg')
+const baggage2 = new Baggage('H3', '32kg')
+const tripdetail = new TripDetail()
+tripdetail.addPassenger(passenger1);
+tripdetail.addPassenger(passenger2);
+tripdetail.addFlight(flightA);
+tripdetail.addFlight(flightB);
+tripdetail.addBaggage(baggage1);
+tripdetail.addBaggage(baggage2);
+// console.log(tripdetail)
+
+// -------------User sorry1 Airline Controller -----------------
 const airlinecontroller = employees[6].addTripDetail;
 // console.log(airlinecontroller)
 
 
-// Retrieve the salary by position 
+
+
+// ----------- USER STORY5 Retrieve the salary by position ----------
 function getSalaryByPosition(jobCategory: JobCategory): number {
   let totalSalaryByPosition = 0;
   let totalSalaryAllPosition = 0;
@@ -236,17 +238,21 @@ const salaryOfPosition = getSalaryByPosition(JobCategory.pilot);
 
 
 //  ticket 
-let Ticket_passenger = new Ticket(Seatype, flight2, [BookingTicketPassenger1], passengers1[0], TicketType.OneWay);
-let Ticket_passenger_01 = new Ticket(Seatype, flight, [BookingTicketPassenger_2], passengers1[1], TicketType.Return);
-let Ticket_passenger_02 = new Ticket(Seatype, flight2, [BookingTicketPassenger_2], passengers1[2], TicketType.Return);
-let Ticket_passenger_03 = new Ticket(Seatype, flight2, [BookingTicketPassenger_2], passengers1[3], TicketType.OneWay);
+let seat1 = new Seats(SeatType.Business_class, Business_class.C5);
+let seat2 = new Seats(SeatType.Business_class, Business_class.C5);
+let seat3 = new Seats(SeatType.Business_class, Business_class.C5);
+let seat4 = new Seats(SeatType.Business_class, Business_class.C5);
+let Ticket_passenger = new Ticket( seat1 , flight2, [BookingTicketPassenger1], passengers1[0], TicketType.OneWay);
+let Ticket_passenger_01 = new Ticket( seat2 , flight, [BookingTicketPassenger_2], passengers1[1], TicketType.Return);
+let Ticket_passenger_02 = new Ticket( seat3 , flight2, [BookingTicketPassenger_2], passengers1[2], TicketType.Return);
+let Ticket_passenger_03 = new Ticket( seat4 , flight2, [BookingTicketPassenger_2], passengers1[3], TicketType.OneWay);
 
 //  ticket that had been booking already
-// console.log(Ticket_passenger_01);
+console.log(Ticket_passenger_01);
 
 
 //  ------------- basic Console  by other ---------------
-// console.log(Ticket_passenger)
+// console.log(Ticket_passenger_01)
 // ConsoleLog Booking Ticket
 // console.log(bookingFlightReferences);
 
@@ -262,6 +268,9 @@ const passengers: Passenger[] = [
   new Passenger(3, 'Bob Brown', '0234567', Gender.Female),
   new Passenger(5, 'Bob Brown', '0234567', Gender.Female),
 ];
+
+// console.log(passengers)
+
 
 // Adding a ticket for each passenger
 // Printing out the tickets for each passenger
@@ -279,6 +288,7 @@ passengers[3].addTicket(Ticket_passenger_03);
 const route_01 = new Route("Origin City 1", "Destination City 1", "10000km")
 const flight_01 = new Flight("FL123", dateTime1, dateTime2, route_01, passengers, manyMeal);
 // console.log(flight_01)
+
 const passengersWithReturnTicketsCount = flight_01.getPassengersWithReturnTicketsCount();
 const passengerWithReturnTicketsDetals = flight_01.getPassengersWithReturnTicketsDetail();
 
@@ -286,9 +296,9 @@ const passengerWithReturnTicketsDetals = flight_01.getPassengersWithReturnTicket
 //  final console Of Airline Manager want to know about the return tickets
 //  __________________________details for passenger return tickets_________________________
 
-console.log("Airline Manager want to know passenger have ticket return", passengersWithReturnTicketsCount);
+// console.log("Airline Manager want to know passenger have ticket return", passengersWithReturnTicketsCount);
 //  __________________________number of return tickets______________________________________
-console.log(`Informtion detail`, passengerWithReturnTicketsDetals);
+// console.log(`Informtion detail`, passengerWithReturnTicketsDetals);
 
 
 

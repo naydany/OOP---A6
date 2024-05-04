@@ -46,8 +46,8 @@ export enum Meal {
 
 //Seat type
 export enum SeatType {
-    Economy_classic = 'Business_classic',
-    Economy_flex = 'Business_flex',
+    Economy_classic = 'Economy_classic',
+    Economy_flex = 'Economy_flex',
     Business_class = 'Business_class'
 
 }
