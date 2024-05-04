@@ -7,6 +7,7 @@ export class Seats{
     constructor( seattype:SeatType,seatNumber:Economy_classic | Economy_flex | Business_class){
         this.seattype = seattype;
         this.seatNumber=seatNumber
+
     }
 
     getSetType():SeatType{
